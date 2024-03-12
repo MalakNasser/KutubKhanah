@@ -58,6 +58,7 @@ body {
     var(--old-lace),
     var(--tiffany-blue-trans)
   );
+  min-height: 100vh;
 }
 
 .book {
