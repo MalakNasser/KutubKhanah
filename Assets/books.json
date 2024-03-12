@@ -1,17 +1,5 @@
 [
   {
-    "author": "Chinua Achebe",
-    "country": "Nigeria",
-    "imageLink": "../Assets/images/things-fall-apart.jpg",
-    "language": "English",
-    "link": "https://en.wikipedia.org/wiki/Things_Fall_Apart\n",
-    "pages": 209,
-    "title": "Things Fall Apart",
-    "year": 1958,
-    "price": 15.99,
-    "category": "Fiction"
-  },
-  {
     "author": "Hans Christian Andersen",
     "country": "Denmark",
     "imageLink": "../Assets/images/fairy-tales.jpg",
@@ -22,6 +10,18 @@
     "year": 1836,
     "price": 12.49,
     "category": "Children's Books"
+  },
+  {
+    "author": "Chinua Achebe",
+    "country": "Nigeria",
+    "imageLink": "../Assets/images/things-fall-apart.jpg",
+    "language": "English",
+    "link": "https://en.wikipedia.org/wiki/Things_Fall_Apart\n",
+    "pages": 209,
+    "title": "Things Fall Apart",
+    "year": 1958,
+    "price": 15.99,
+    "category": "Fiction"
   },
   {
     "author": "Dante Alighieri",
