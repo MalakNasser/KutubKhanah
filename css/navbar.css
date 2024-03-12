@@ -10,7 +10,7 @@
 .navbar-link{
   text-decoration: none;
   font-weight: bold;
-  color:var(--jet-trans);
+  color:var(--jet-trans-75);
   position: relative;
 }
 

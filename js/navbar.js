@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     navbarLinks.forEach(function(link) {
       var linkPath = link.getAttribute('href');
       var indexLink = document.querySelector('.navbar-link[href="../index.html"]');
-      if (parentLocation.endsWith('/index.html') || parentLocation === '/') {
+      if (parentLocation === '/') {
         indexLink.classList.add('active');
       }
       else if (linkPath.endsWith(parentLocation)) {
