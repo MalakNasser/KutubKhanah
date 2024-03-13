@@ -36,7 +36,7 @@ fetch("../Assets/books.json")
                         </button>
                     </div>
                     <p id="bookTitle">${book.title}</p>
-                    <p id="bookPrice">${book.price}</p>
+                    <p id="bookPrice">${book.price}$</p>
                     <button class="btn">Show Details</button>
                 `;
 
