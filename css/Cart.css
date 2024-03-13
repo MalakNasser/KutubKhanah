@@ -1,24 +1,293 @@
-@import url(./root.css);
-body {
-  font-family: var(--ff-montserrat);
-  font-weight: var(--fw-regular);
-  color: var(--clr-neutral-dark-grayish-blue);
-  font-size: 0.89rem;
-  background-color: var(--clr-primary-cream);
-  height: 100vh;
+/* Reset some default styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+/* Container styles */
+.container {
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+/* Header styles */
+h1 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 30px;
+}
+
+/* Cart container styles */
+#cart-container {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the items horizontally */
+  align-items: center; /* Center the items vertically */
+  border: 1px solid #dee2e6;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cart item styles */
+.cart-item {
+  flex: 0 0 calc(33.333% - 20px);
+  max-width: calc(33.333% - 20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #dee2e6;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 10px 30px; /* Increased space between items */
+}
+
+/* Image styles */
+.card-img-top {
+  height: 200px;
+  width: 150px;
+  object-fit: cover;
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+/* Item information styles */
+.item-info {
+  text-align: center;
+}
+
+/* Title styles */
+.card-body h5 {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Price styles */
+.card-body p {
+  font-weight: 500;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
-/* Start Of Cart section  */
-.cart-section {
-  background-color: #fff;
-  border-radius: 6px;
-  padding: 30px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+label {
+  margin-bottom: 5px;
 }
-.cart-section h5 {
-  color: #333;
-  font-weight: bold;
+
+input[type="number"] {
+  width: 50px;
+  padding: 5px;
+  margin-right: 5px;
+  text-align: center;
+}
+
+.btn-secondary {
+  background-color: #396c98;
+  color: #fff;
+  border: 1px solid #396c98;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+  width: 20px;
+  height: 20px;
+  float: right;
+  align-items: center;
+}
+
+.btn-secondary:hover {
+  background-color: #2e5578;
+  border-color: #2e5578;
+}
+
+/* Checkout button styles */
+#checkoutBtn {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#checkoutBtn:hover {
+  background-color: #218838;
+}
+
+/* Checkout form styles */
+#checkoutForm {
+  margin-top: 30px;
+}
+
+/* Form styles */
+form {
+  margin-bottom: 30px;
+}
+
+/* Form label styles */
+label {
+  display: block;
+  margin-bottom: 15px;
+  color: #495057;
+}
+
+/* Form input styles */
+input {
+  width: 100%;
+  padding: 15px;
   margin-bottom: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+/* Button styles */
+.btn-primary {
+  display: block;
+  margin: 0 auto;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-remove {
+  display: block;
+  margin: 0 auto;
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-remove:hover {
+  background-color: #ae1f1f;
+}
+
+/* Add styles for the cart-grid */
+#cart-container.cart-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: -10px;
+}
+
+.card-body h5 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+}
+
+.card-body p {
+  font-weight: 500;
+  text-align: center;
+  font-size: 15px;
+}
+
+/* Total price styles */
+#totalPrice {
+  text-align: right;
+  margin-top: 10px;
+  font-weight: 400;
+}
+/* Toast Container styles */
+#toastContainer {
+  position: fixed;
+  right: 10px;
+  z-index: 1000;
+}
+
+/* Toast styles */
+.toast {
+  width: 400px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 0.9;
+  height: 100px;
+}
+
+/* Toast Header styles */
+.toast-header {
+  background-color: #0056b3;
+  color: #fff;
+  border-radius: 5px 5px 0 0;
+  height: 50px;
+}
+
+.toast-header p {
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+/* Toast Body styles */
+.toast-body {
+  padding: 15px;
+}
+
+/* Fade animation styles */
+.fade {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.fade.show {
+  opacity: 1;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  #cart-container.cart-grid {
+    flex-wrap: wrap;
+  }
+  .container {
+    max-width: 90%;
+  }
+
+  #checkoutBtn,
+  .btn-primary {
+    padding: 12px 20px;
+  }
+}
+
+/* Responsive form styles */
+@media (max-width: 576px) {
+  input {
+    padding: 12px;
+  }
 }
