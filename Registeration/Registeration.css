@@ -145,6 +145,15 @@ li{
 .special-handling-width{
     width: 100px !important;
 }
+
+ .toast {
+    /* width: 400px;
+    margin: 0 auto;  */
+    display: none;
+  } 
+  .close{
+    margin-left: 161px;
+  }
 @media (max-width: 985px) {
     .second-half{
         display: none;

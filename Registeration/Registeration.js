@@ -62,6 +62,7 @@ const submit = (user) => {
   getUsersData()
 };
 
+
 document.addEventListener("DOMContentLoaded", function () {
 const form = document.querySelector(".formm");
 
@@ -74,6 +75,15 @@ const form = document.querySelector(".formm");
     const password = form.querySelector("#exampleInputPassword").value.trim();
     const country = form.querySelector("#inputGroupSelectCountry").value;
     const referrer = form.querySelector("#inputGroupSelectReferrer").value;
+
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{8,}$/;
+    const passwordToast = document.getElementById('passwordToast');
+  
+
+    
+
+   
+    
     if (
       !firstName ||
       !lastName ||
@@ -86,6 +96,18 @@ const form = document.querySelector(".formm");
       return;
     }
 
+    if (!passwordRegex.test(password)) {
+      passwordToast.style.display = "block";
+      passwordToast.classList.add('show');
+      setTimeout(() => {
+        passwordToast.classList.remove('show');
+        passwordToast.style.display = "none";
+      }, 50000); // Hide the toast after 10 seconds
+      return;
+    }
+   
+
+
      user = {
       firstName: firstName,
       lastName: lastName,
@@ -96,4 +118,10 @@ const form = document.querySelector(".formm");
     };
     submit(user);
   });
+
+  const closeToast = document.querySelector('[data-dismiss="toast"]');
+closeToast.addEventListener("click", () => {
+  passwordToast.style.display = "none";
+});
+
 });
