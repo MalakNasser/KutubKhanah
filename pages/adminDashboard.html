@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/adminDashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <title>Admin Dashboard</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="dashboard-header">
+        <h1>Admin Dashboard</h1>
+        <button
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#addBookModal"
+        >
+          Add Book
+        </button>
+      </div>
+
+      <!-- Display data from localStorage -->
+      <div id="adminOverview" class="card-container"></div>
+
+      <!-- Pagination -->
+      <nav>
+        <ul class="pagination justify-content-center" id="pagination"></ul>
+      </nav>
+    </div>
+
+    <!-- Add Book Modal -->
+    <div
+      class="modal fade"
+      id="addBookModal"
+      tabindex="-1"
+      aria-labelledby="addBookModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addBookModalLabel">Add New Book</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="addBookForm">
+              <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" required />
+              </div>
+              <div class="mb-3">
+                <label for="author" class="form-label">Author</label>
+                <input type="text" class="form-control" id="author" required />
+              </div>
+              <div class="mb-3">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" class="form-control" id="country" required />
+              </div>
+              <div class="mb-3">
+                <label for="imageLink" class="form-label">Image Link</label>
+                <input
+                  type="file"
+                  class="form-control"
+                  id="imageLink"
+                  accept="image/*"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="language" class="form-label">Language</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="language"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="pages" class="form-label">Pages</label>
+                <input type="number" class="form-control" id="pages" required />
+              </div>
+              <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input
+                  type="number"
+                  step="0.01"
+                  class="form-control"
+                  id="price"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="category" class="form-label">Category</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="category"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Add Book</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="../js/adminDashboard.js"></script>
+  </body>
+</html>
