@@ -25,7 +25,8 @@ fetch("../Assets/books.json")
           "flex-column",
           "justify-content-between",
           "align-items-center",
-          "p-3"
+          "p-3",
+          "text-center"
         );
 
         bookElement.innerHTML = `
