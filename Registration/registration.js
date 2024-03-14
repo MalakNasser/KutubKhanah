@@ -12,14 +12,14 @@ const createUser = () => {
   })
     .then((response) => {
       if (response.ok) {
-        alert("Registration successful!");
+        console.log("Registration successful!");
       } else {
-        alert("Failed to register. Please try again.");
+        console.log("Failed to register. Please try again.");
       }
     })
     .catch((error) => {
       console.error("Error:", error);
-      alert("An error occurred while registering. Please try again later.");
+      console.log("An error occurred while registering. Please try again later.");
     });
 };
 
@@ -78,6 +78,8 @@ const form = document.querySelector(".formm");
 
     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{8,}$/;
     const passwordToast = document.getElementById('passwordToast');
+    const toastBody= passwordToast.querySelector('.toast-body');
+    
   
 
     
@@ -92,13 +94,22 @@ const form = document.querySelector(".formm");
       !country ||
       !referrer
     ) {
-      alert("Please fill out all fields");
+      passwordToast.style.display = "block";
+      passwordToast.classList.add('show');
+      toastBody.innerHTML ="Please fill out all fields";
+      setTimeout(() => {
+        passwordToast.classList.remove('show');
+        passwordToast.style.display = "none";
+      }, 50000); // Hide the toast after 10 seconds
       return;
     }
 
     if (!passwordRegex.test(password)) {
+    
       passwordToast.style.display = "block";
       passwordToast.classList.add('show');
+      toastBody.innerHTML = "Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, one number, and one special character ";
+
       setTimeout(() => {
         passwordToast.classList.remove('show');
         passwordToast.style.display = "none";
