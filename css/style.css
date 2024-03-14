@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+:root {
+  --old-lace: hsla(42, 77%, 95%, 1);
+  --seashell: hsla(28, 100%, 97%, 1);
+  --tiffany-blue: hsla(176, 39%, 72%, 1);
+  --tiffany-blue-trans: hsla(176, 39%, 72%, 0.60);
+  --mauve: hsla(263, 81%, 81%, 1);
+  --celadon: hsla(138, 53%, 78%, 1);
+  --salmon-pink: hsla(358, 75%, 76%, 1);
+  --apricot: hsla(20, 95%, 85%, 1);
+  --cerulean: hsla(192, 77%, 31%, 1);
+  --jet: hsl(0, 0%, 22%);
+  --jet-trans-75: hsla(0, 0%, 22%, 0.75);
+  --jet-trans-25: hsla(0, 0%, 22%, 0.25);
+  --jet-trans-95: hsla(0, 0%, 22%, 0.95);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+.container-frame{
+    margin-top: 120px;
+}

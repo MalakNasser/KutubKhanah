@@ -1,0 +1,148 @@
+body {
+  background-color: var(--old-lace);
+}
+.dropdown-toggle,
+.dropdown-toggle:hover,
+.dropdown-toggle:focus,
+.dropdown-toggle:active {
+  background-color: transparent !important;
+  color: var(--jet) !important;
+  font-weight: 500 !important;
+  border-radius: 0 !important;
+  border: 0px !important;
+  border-bottom: 1px solid var(--jet) !important;
+}
+
+.dropdown-menu {
+  background-color: var(--jet-trans-95);
+}
+
+.dropdown-item {
+  color: var(--old-lace);
+}
+
+.dropdown-item:hover {
+  color: var(--old-lace);
+  background-color: var(--jet);
+}
+
+.categories {
+  border: 1px var(--jet) solid;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.btn-yellow,
+.btn-yellow:hover {
+  background-color: rgb(255, 208, 0);
+  box-shadow: 4px 4px 2px var(--jet-trans-95);
+}
+
+.btn-yellow:hover {
+  filter: brightness(105%);
+}
+
+.srch,
+.srch:hover,
+.srch:focus,
+.srch:active {
+  background-color: transparent;
+  border: var(--jet) 1px solid;
+  color: var(--jet);
+  box-shadow: none;
+}
+
+.categories {
+  background: linear-gradient(
+    to bottom,
+    var(--old-lace),
+    var(--tiffany-blue-trans)
+  );
+  min-height: 100vh;
+}
+
+.book {
+  background-color: white;
+  height: 330px;
+  border-radius: 10px;
+  border: 1px solid var(--jet-trans-25);
+  position: relative;
+}
+
+.book img {
+  border: 1px solid var(--jet-trans-25);
+  border-radius: 10px 0px 10px 0px;
+}
+
+.book-image-container {
+  position: relative;
+  width: 90%;
+}
+
+.icon-heart {
+  position: absolute;
+  bottom: -7px;
+  right: -5px;
+  background-color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.icon-heart:hover {
+  bottom: -6.5px;
+}
+.icon-heart:hover i{
+  color: rgb(255, 208, 0);
+}
+.icon-heart:hover i::before{
+  -webkit-text-stroke: 1px  rgb(255, 208, 0);
+}
+
+.icon-heart i {
+  color: white;
+}
+
+.icon-heart i::before {
+  -webkit-text-stroke: 1px black;
+}
+
+.book p {
+  padding: 0;
+  margin: 0;
+  padding-top: 2px;
+}
+
+.book .btn {
+  background-color: rgb(255, 208, 0);
+  border: 1.4px solid var(--jet-trans-95);
+  padding: 2px 10px 2px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: 2px 2px 1px var(--jet);
+  position: relative;
+  bottom: 0;
+  transition:filter 0.1s;
+}
+
+.book .btn:hover {
+  filter: brightness(105%);
+}
+
+.pagination-button{
+    margin: 0px 5px 0px 5px;
+    background-color: transparent;
+    border: none;
+    color: var(--jet);
+    font-weight: bold;
+}
+
+.selected-page{
+    color: rgb(255, 208, 0);
+    font-weight: 800;
+    font-size: 20px;
+}

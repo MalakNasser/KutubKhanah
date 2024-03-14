@@ -1,0 +1,42 @@
+.container-fluid {
+  height: 100px;
+  background-color: var(--old-lace);
+}
+
+.container {
+  background-color: var(--old-lace);
+}
+
+.navbar-link{
+  text-decoration: none;
+  font-weight: bold;
+  color:var(--jet-trans-75);
+  position: relative;
+}
+
+.navbar-link.active{
+  color: var(--jet);
+  font-weight: bolder;
+}
+.navbar-link.active:after{
+  width: 100%;
+}
+.navbar-link:hover{
+  color: var(--jet);
+  font-weight: bolder;
+}
+
+.navbar-link:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0px;
+  height: 4px;
+  background-color: var(--tiffany-blue);
+  transition: width 0.3s ease;
+}
+
+.navbar-link:hover:after {
+  width: 100%;
+}
