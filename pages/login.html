@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="Login.css" />
-    <script src="login.js"></script>
+    <link rel="icon" href="../Assets/images/logo.png" type="image/png">
+    <link rel="stylesheet" href="/css/login.css" />
+    <script src="/js/login.js"></script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -22,18 +24,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <nav class="navbar">
-      <a class="website-name" href="#">
-        <img
-          src="/Assets/Images/Logo.png"
-          width="30"
-          height="30"
-          class="imgg"
-          alt=""
-        />
-        <b class="name">KutubKhanah</b>
+    
+    <nav class="container container-fluid navbar">
+      <a href="../index.html" class="col-2 logo">
+          <img src="../Assets/images/logo.png" class="img-fluid"/>
       </a>
-    </nav>
+  </nav>
 
     <div class="whole d-flex row">
       <div class="first-half col-lg-6 col-sm-12">
@@ -69,7 +65,8 @@
             </div>
             <div class="free-button-wrapper">
               <a
-                href=""
+              id="#forgotPasswordBtn"
+                href="/pages/forgotPassword.html"
                 class="forgot-password-button"
                 data-toggle="modal"
                 data-target="#exampleModal"
@@ -87,7 +84,7 @@
               <br /><br />
               <p class="free-trial">
                 Don't have an account ?
-                <a href="/Registration/registration.html" class="Sign-in-Link"
+                <a href="/pages/registration.html" class="Sign-in-Link"
                   >Start a free trial</a
                 >
               </p>
@@ -97,8 +94,35 @@
       </div>
 
       <div class="second-half col-lg-6 col-sm-12">
+        
+        <style>
+          .no-gap {
+              margin: 0;
+              padding: 0;
+              align-items: center;
+              margin-left: 28px;
+              color: #696864;
+          }
+      </style>
+      
+      <div class="row no-gap ">
+          <div class="col-auto no-gap">
+              <hr class="no-gap" style="height:2px;border-width:0;color:gray;background-color:gray; width: 120px;">
+          </div>
+          <div class="col-auto no-gap">
+              <h6 class="no-gap">   Or  </h6>
+          </div>
+          <div class="col-auto no-gap">
+              <hr class="no-gap" style="height:2px;border-width:0;color:gray;background-color:gray; width: 120px;">
+          </div>
+      </div>
+      
+      
         <div class="social-media-buttons d-flex flex-column col-lg-7 gap-4">
+          
           <div class="row-cols-1">
+            
+     
             <button
               type="button"
               class="btn black-btn d-flex align-items-center position-relative"
@@ -107,7 +131,7 @@
               <div>
                 <i class="fab fa-apple fa-xl" style="color: #ffffff"></i>
               </div>
-              <span> Sign In with Apple </span>
+              <span style="padding-left: 60px;"> Sign In with Apple </span>
             </button>
           </div>
 
@@ -120,7 +144,7 @@
               <div>
                 <i class="fab fa-facebook-f fa-xl" style="color: #ffffff"></i>
               </div>
-              <span> Sign In with Facebook </span>
+              <span style="padding-left: 60px;"> Sign In with Facebook </span>
             </button>
           </div>
 
@@ -133,7 +157,7 @@
               <div>
                 <i class="fab fa-google fa-xl" style="color: #ffffff"></i>
               </div>
-              <span> Sign In with Google </span>
+              <span style="padding-left: 60px;"> Sign In with Google </span>
             </button>
           </div>
           <div class="row-cols-1">
@@ -145,65 +169,12 @@
               <div>
                 <i class="fab fa-linkedin-in fa-xl" style="color: #ffffff"></i>
               </div>
-              <span> Sign In with LinkedIn </span>
+              <span style="padding-left: 60px;"> Sign In with LinkedIn </span>
             </button>
           </div>
         </div>
       </div>
 
-      <div
-        class="modal fade"
-        id="exampleModal"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Reset Password</h5>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="form-group">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="exampleInputFirstName"
-                    aria-describedby="emailHelp"
-                    placeholder="Email Address"
-                  />
-                </div>
-                <button type="" class="btn btn-primary col-lg-3 col-sm-11">
-                  Send Reset Link
-                </button>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </div>
   </body>
 </html>

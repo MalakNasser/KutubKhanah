@@ -1,31 +1,24 @@
-.imgg{
-    width: 43px;
-    height: 35px;
-    position: relative;
-    left: 295px;
-    top: -9px;
-}
-.website-name{
-    color: var(--main-primary-color);
-    text-decoration: none;
-}
-.navbar{
-    border-bottom: 1px solid #000;
-    height: 80px;
-    top: 0;
-    position: sticky !important;
-    background: white;
-}
+body{
+    background-color: #fcf6e8 !important;
+  }
 
-.name{
-    font-size: 30px;
-    position: relative;
-    left: 60px;
-}
 .whole{
     height: 100vh;
-    padding-top: 33px;
+    padding-top: 36px;;
    
+}
+.container-fluid {
+    height: 100px;
+    background-color: var(--old-lace);
+  }
+  
+  .container {
+    background-color: var(--old-lace);
+  }
+  .logo{
+    width: 111px !important;
+    margin-left: 13px;
+    margin-top: 19px;
 }
 .first-half{
     width: 50vw;
@@ -146,19 +139,46 @@ li{
     width: 100px !important;
 }
 
- .toast {
-    /* width: 400px;
-    margin: 0 auto;  */
-    display: none;
-  } 
-  .close{
-    margin-left: 161px;
-  }
+
 @media (max-width: 985px) {
     .second-half{
         display: none;
     }
   }
+  .toast-container {
+    position: fixed;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    z-index: 1000;
+    width: 100%; /* Take full width of the viewport */
+    display: flex;
+    justify-content: center;
+}
+
+.toast {
+    max-width: 350px;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+}
+
+.toast-header {
+    background-color: #dc3545;
+    color: white;
+}
+
+.close {
+    width: 23px;
+    color: black;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    margin-left: 172px;
+}
+
+.close:hover {
+    opacity: 1;
+}
+
 :root {
     --main-primary-color : #d3002d; 
     --grey-color : #ced4da;

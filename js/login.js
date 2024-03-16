@@ -16,13 +16,14 @@ const getUsersData = async () => {
 const loginUser = (email, password) => {
   const user = users.find((user) => user.email === email && user.password === password);
   if (user) {
-    // Redirect to another page
-    window.location.href = "another-page.html"; 
+    window.location.href = "/pages/bookstore.html"; 
   } else {
     const errorMessage =  document.querySelector("#error-login-message");
     errorMessage.style.display = "block";
   }
 };
+
+
 
 document.addEventListener("DOMContentLoaded", async function () {
   await getUsersData();
@@ -32,11 +33,12 @@ document.addEventListener("DOMContentLoaded", async function () {
   form.addEventListener("submit", function (event) {
     event.preventDefault(); 
 
-    const email = form.querySelector("#exampleInputEmail").value.trim();
-    const password = form.querySelector("#exampleInputPassword").value.trim();
+    const email = form.querySelector("#exampleInputEmail").value;
+    const password = form.querySelector("#exampleInputPassword").value;
 
     if (!email || !password) {
-      alert("Please fill out all fields");
+      const errorMessage =  document.querySelector("#error-login-message");
+      errorMessage.style.display = "block";
       return;
     }
 

@@ -1,34 +1,27 @@
-.imgg {
-  width: 43px;
-  height: 35px;
-  position: relative;
-  left: 295px;
-  top: -9px;
+body{
+  background-color: #fcf6e8 !important;
 }
-.website-name {
-  color: var(--main-primary-color);
-  text-decoration: none;
-  padding-left: 129px;
-}
-.navbar {
-  /* border-bottom: 1px solid #000; */
-  height: 107px;
-  top: 0;
- 
-  background: white;
+.container-fluid {
+  height: 100px;
+  background-color: var(--old-lace);
 }
 
-.name {
-  font-size: 30px;
-  position: relative;
-  left: 60px;
+.container {
+  background-color: var(--old-lace);
 }
+.logo{
+  width: 111px !important;
+  margin-left: 13px;
+  margin-top: 19px;
+}
+
+
 h3 {
   color: #3d3b49;
 }
 .whole {
   height: 100vh;
-  padding-top: 33px;
+  padding-top: 85px;
 }
 .first-half {
   width: 50vw;
@@ -58,7 +51,7 @@ h2 {
   font-size: 2.5rem !important;
 }
 a {
-  color: var(--main-primary-color) !important;
+  color: #696864 !important;
   font-weight: bolder;
 }
 .forgot-password-button {
@@ -68,7 +61,7 @@ a {
   padding-top: 15px;
 }
 .btn-primary {
-  background-color: var(--main-primary-color) !important;
+  background-color: #212529 !important;
   border: none !important;
   border-radius: 1px;
   height: 47px;
@@ -105,7 +98,8 @@ a {
   background-color: #006396;
 }
 .social-media-buttons {
-  padding-left: 63px;
+  padding-top: 30px;
+  margin-left: 64px ;
 }
 .input-fields {
   padding-top: 16px;
