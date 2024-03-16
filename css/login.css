@@ -1,0 +1,150 @@
+body{
+  background-color: #fcf6e8 !important;
+}
+.container-fluid {
+  height: 100px;
+  background-color: var(--old-lace);
+}
+
+.container {
+  background-color: var(--old-lace);
+}
+.logo{
+  width: 111px !important;
+  margin-left: 13px;
+  margin-top: 19px;
+}
+
+
+h3 {
+  color: #3d3b49;
+}
+.whole {
+  height: 100vh;
+  padding-top: 85px;
+}
+.first-half {
+  width: 50vw;
+  /* height: 100vh; */
+  padding-left: 15rem !important;
+}
+.second-half {
+  padding-left: 64px;
+  padding-top: 22px;
+}
+
+/* form{
+    padding-top: 48px;
+} */
+
+.form-group {
+  max-width: 590px !important;
+  padding-bottom: 21px;
+}
+.form-control {
+  height: 45px;
+  width: 80%;
+}
+
+h2 {
+  color: #3d3b49;
+  font-size: 2.5rem !important;
+}
+a {
+  color: #696864 !important;
+  font-weight: bolder;
+}
+.forgot-password-button {
+  padding-top: 4px;
+}
+.free-button-wrapper {
+  padding-top: 15px;
+}
+.btn-primary {
+  background-color: #212529 !important;
+  border: none !important;
+  border-radius: 1px;
+  height: 47px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.btn {
+  height: 50px;
+  border-radius: 22px !important;
+  color: white !important;
+}
+.black-btn {
+  background-color: #000000 !important;
+}
+.black-btn div {
+  background-color: #202020;
+}
+.blue-btn {
+  background-color: #395995 !important;
+}
+.blue-btn div {
+  background-color: #2e4777;
+}
+.red-btn {
+  background-color: #e94235 !important;
+}
+.red-btn div {
+  background-color: #cd2e21;
+}
+.baby-blue-btn {
+  background-color: #0077b5 !important;
+}
+.baby-blue-btn div {
+  background-color: #006396;
+}
+.social-media-buttons {
+  padding-top: 30px;
+  margin-left: 64px ;
+}
+.input-fields {
+  padding-top: 16px;
+}
+
+.error-login-message {
+  display: none;
+  border-left: 5px solid var(--main-primary-color);
+}
+.error-message {
+  padding-left: 4px;
+}
+
+.btn div {
+  height: 100%;
+  left: 0;
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: -14px;
+  height: 50px;
+  width: 50px;
+  padding-left: 11px;
+}
+
+.btn span {
+  font-size: 14px;
+}
+
+:root {
+  --main-primary-color: #d3002d;
+  --grey-color: #ced4da;
+}
+
+.fab{
+    padding-left: 7px;
+}
+
+@media (max-width: 985px) {
+  .first-half {
+    padding-left: 5rem !important;
+  }
+  .btn {
+    max-width: 566px;
+  }
+}
