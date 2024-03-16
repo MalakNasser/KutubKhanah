@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="../Assets/images/logo.png" type="image/png">
+    <link rel="icon" href="../Assets/images/logo.png" type="image/png" />
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/bookstore.css" />
@@ -26,19 +26,33 @@
     ></iframe>
     <div class="container mb-4 container-frame">
       <div class="sorting w-100 d-flex justify-content-end">
-        <div class="dropdown">
+        <div class="dropdown mt-3">
           <button
             class="btn btn-secondary dropdown-toggle"
             type="button"
-            data-bs-toggle="dropdown"
+            id="sortDropdown"
+            data-toggle="dropdown"
+            aria-haspopup="true"
             aria-expanded="false"
           >
-            Default Sorting
+            Sort By
           </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+            <li class="dropdown-item sort-option" data-sort="default">
+              Default
+            </li>
+            <li class="dropdown-item sort-option" data-sort="titleAsc">
+              Title (A-Z)
+            </li>
+            <li class="dropdown-item sort-option" data-sort="titleDesc">
+              Title (Z-A)
+            </li>
+            <li class="dropdown-item sort-option" data-sort="priceAsc">
+              Price (Low to High)
+            </li>
+            <li class="dropdown-item sort-option" data-sort="priceDesc">
+              Price (High to Low)
+            </li>
           </ul>
         </div>
       </div>
@@ -64,8 +78,95 @@
                 />
               </button>
             </div>
-            <div class="items m-3">
-              <p>categories</p>
+            <div class="items m-3 row">
+              <div class="col-9">
+                <h4>Categories</h4>
+                <div id="category-selection"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row mt-5">
+                  <div class="col-md-6">
+                    <h5>Filter By</h5>
+                  </div>
+                  <div class="col-md-6">
+                    <button class="btn btn-outline-warning btn-sm" id="Reset">
+                      Reset All
+                    </button>
+                  </div>
+                </div>
+
+                <div class="row mt-5 mb-2 align-items-center">
+                  <div class="col-md-7">
+                    <h6>Language</h6>
+                  </div>
+                  <div class="col-md-5">
+                    <button
+                      class="btn btn-outline-warning btn-sm"
+                      id="clearLanguageFilter"
+                    >
+                      Clear
+                    </button>
+                  </div>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  ></div>
+                </div>
+                <div class="row mt-3">
+                  <button
+                    class="btn btn-secondary dropdown-toggle w-100"
+                    type="button"
+                    id="languageDropdown"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Filter by Language
+                  </button>
+                </div>
+                <div class="dropup">
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="languageDropdown"
+                    id="language"
+                  ></ul>
+                </div>
+
+                <div class="row mt-5 mb-2 align-items-center">
+                  <div class="col-md-7">
+                    <h6>Price</h6>
+                  </div>
+                  <div class="col-md-5">
+                    <button
+                      class="btn btn-outline-warning btn-sm"
+                      id="clearPriceFilter"
+                    >
+                      Clear
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-center mb-2"
+                >
+                  <input
+                    type="number"
+                    id="min-price"
+                    class="form-control"
+                    placeholder="Min"
+                    min="0"
+                    step="1"
+                  />
+                  <input
+                    type="number"
+                    id="max-price"
+                    class="form-control"
+                    placeholder="Max"
+                    min="0"
+                    step="1"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -85,5 +186,6 @@
     ></iframe>
     <script src="../js/bootstrap.bundle.js"></script>
     <script src="../js/bookstore.js"></script>
+    <script src="../js/menu.js"></script>
   </body>
 </html>

@@ -15,6 +15,10 @@ body {
 
 .dropdown-menu {
   background-color: var(--jet-trans-95);
+  max-height: 300px;
+  overflow-y: auto;
+  right: 0;
+  left: auto;
 }
 
 .dropdown-item {
@@ -96,11 +100,11 @@ body {
 .icon-heart:hover {
   bottom: -6.5px;
 }
-.icon-heart:hover i{
+.icon-heart:hover i {
   color: rgb(255, 208, 0);
 }
-.icon-heart:hover i::before{
-  -webkit-text-stroke: 1px  rgb(255, 208, 0);
+.icon-heart:hover i::before {
+  -webkit-text-stroke: 1px rgb(255, 208, 0);
 }
 
 .icon-heart i {
@@ -126,23 +130,69 @@ body {
   box-shadow: 2px 2px 1px var(--jet);
   position: relative;
   bottom: 0;
-  transition:filter 0.1s;
+  transition: filter 0.1s;
 }
 
 .book .btn:hover {
   filter: brightness(105%);
 }
 
-.pagination-button{
-    margin: 0px 5px 0px 5px;
-    background-color: transparent;
-    border: none;
-    color: var(--jet);
-    font-weight: bold;
+.pagination-button {
+  margin: 0px 5px 0px 5px;
+  background-color: transparent;
+  border: none;
+  color: var(--jet);
+  font-weight: bold;
 }
 
-.selected-page{
-    color: rgb(255, 208, 0);
-    font-weight: 800;
-    font-size: 20px;
+.selected-page {
+  color: rgb(255, 208, 0);
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.clickable-header {
+  cursor: pointer;
+}
+
+.clickable-header:hover {
+  color: rgb(255, 208, 0);
+}
+
+input[type="number"]:hover,
+input[type="number"]:focus {
+  box-shadow: 0 0 10px rgb(255, 208, 0);
+}
+
+#min-price,
+#max-price {
+  width: 35%;
+  border: 1px solid;
+  padding: 8px;
+  outline: none;
+}
+
+#min-price,
+#max-price,
+#min-price:hover,
+#max-price:hover,
+#min-price:focus,
+#max-price:focus,
+#min-price:active,
+#max-price:active {
+  background-color: transparent;
+  border: var(--jet) 1px solid;
+  color: var(--jet);
+  box-shadow: none;
+}
+
+.btn-outline-warning {
+  color: #000000;
+  border-color: #000000;
+}
+
+.btn-outline-warning:hover {
+  color: #fff;
+  background-color: #ffc107;
+  border-color: #ffc107;
 }
