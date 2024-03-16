@@ -19,7 +19,6 @@ body {
   gap: 10px;
 }
 
-/* Improved Card Styles */
 .card {
   width: 300px;
   border: 1px solid #ccc;
@@ -32,7 +31,7 @@ body {
 
 .card img {
   max-width: 100%;
-  height: 200px; /* Set a common height for all images */
+  height: 200px;
   object-fit: cover;
 }
 
@@ -40,7 +39,7 @@ body {
   flex: 5;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Adjust as needed */
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -59,7 +58,6 @@ body {
   align-items: center;
 }
 
-/* Button Styles */
 .btn-danger {
   background-color: #dc3545;
   color: #fff;
@@ -74,7 +72,6 @@ body {
   background-color: #c82333;
 }
 
-/* Pagination Styles */
 .pagination {
   display: flex;
   justify-content: center;
@@ -104,7 +101,6 @@ body {
   color: #fff;
 }
 
-/* Flexbox for 5 items per row */
 .admin-overview {
   display: flex;
   flex-wrap: wrap;
@@ -116,7 +112,6 @@ body {
   box-sizing: border-box;
 }
 
-/* Add some spacing between cards on smaller screens */
 @media (max-width: 767px) {
   .admin-overview {
     flex-direction: column;

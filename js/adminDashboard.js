@@ -109,7 +109,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // Event listener for the add book form
   addBookForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -133,7 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("addBookModal").style.display = "none";
   });
 
-  // Event listener for pagination
   paginationContainer.addEventListener("click", (event) => {
     if (event.target.tagName === "A") {
       const currentPage = parseInt(event.target.dataset.page, 10);
@@ -142,7 +140,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Function to update pagination
   const updatePagination = (totalItems, currentPage) => {
     const totalPages = Math.ceil(totalItems / itemsPerPage);
     paginationContainer.innerHTML = "";
@@ -165,12 +162,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // Function to get the current page from the URL hash
   const getCurrentPage = () => {
     const hash = window.location.hash;
     return hash ? parseInt(hash.substring(1), 10) : 1;
   };
 
-  // Fetch data when the page loads
   fetchData();
 });

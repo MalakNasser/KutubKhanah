@@ -5,11 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const toastContainer = document.getElementById("toastContainer");
   let cartItems = [];
 
-  // Fetch data from books.json (replace with your actual path)
   fetch("../Assets/books.json")
     .then((response) => response.json())
     .then((data) => {
-      // Initialize cart with fetched items
       cartItems = data.slice(0, 4).map((item) => ({ ...item, quantity: 1 }));
       displayBooks(cartItems);
       updateTotalDisplay();
@@ -21,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (index !== -1) {
       cartItems.splice(index, 1);
-      // Update the displayed cart and total
       updateCartDisplay();
       updateTotalDisplay();
       showToast("Item removed from the cart", "remove");
@@ -80,7 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
       cartContainer.appendChild(bookCard);
     });
 
-    // Add event listeners for the "Remove" and quantity change buttons
     const removeButtons = document.querySelectorAll(".btn-remove");
     removeButtons.forEach((button) => {
       button.addEventListener("click", removeFromCart);
@@ -97,15 +93,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Function to update the displayed cart
   function updateCartDisplay() {
-    // Clear the current cart display
     cartContainer.innerHTML = "";
-    // Redisplay the books in the cart
     displayBooks(cartItems);
   }
 
-  // Function to calculate and update the total display
   function updateTotalDisplay() {
     const totalPrice = cartItems.reduce(
       (total, item) => total + item.price * item.quantity,
@@ -114,10 +106,9 @@ document.addEventListener("DOMContentLoaded", function () {
     totalDisplay.innerText = `Total: $${totalPrice.toFixed(2)}`;
   }
 
-  // Function to show toasts
   function showToast(message, action) {
     const toast = document.createElement("div");
-    toast.classList.add("toast", "fade", "show"); // Add Bootstrap classes for styling
+    toast.classList.add("toast", "fade", "show");
     toast.setAttribute("role", "alert");
     toast.setAttribute("aria-live", "assertive");
     toast.setAttribute("aria-atomic", "true");
@@ -160,12 +151,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   checkoutBtn.addEventListener("click", () => {
-    // Display the checkout form
     document.getElementById("checkoutForm").style.display = "block";
     showToast("Proceeding to checkout", "checkout");
   });
 
-  // Regular expressions for validation
   const nameRegex = /^[A-Za-z\s]+$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const addressRegex = /^[A-Za-z0-9\s]+$/;
@@ -175,12 +164,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const expiryDateRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
   const cvvRegex = /^\d{3}$/;
 
-  // Function to validate form input
   function validateInput(input, regex) {
     return regex.test(input);
   }
 
-  // Move to the Address form
   document.getElementById("nextToAddress").addEventListener("click", () => {
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
@@ -195,7 +182,6 @@ document.addEventListener("DOMContentLoaded", function () {
     showToast("Proceeding to address information", "checkout");
   });
 
-  // Move to the Payment form
   document.getElementById("nextToPayment").addEventListener("click", () => {
     const address = document.getElementById("address").value;
     const city = document.getElementById("city").value;
@@ -216,7 +202,6 @@ document.addEventListener("DOMContentLoaded", function () {
     showToast("Proceeding to payment information", "checkout");
   });
 
-  // Handle order submission (you may want to implement server-side processing)
   document.getElementById("submitOrder").addEventListener("click", () => {
     const cardNumber = document.getElementById("cardNumber").value;
     const expiryDate = document.getElementById("expiryDate").value;
