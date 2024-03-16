@@ -71,7 +71,7 @@ body {
 
 .book img {
   border: 1px solid var(--jet-trans-25);
-  border-radius: 10px 0px 10px 0px;
+  border-radius: 25px 0px 25px 0px;
 }
 
 .book-image-container {

@@ -25,8 +25,7 @@ fetch("../Assets/books.json")
           "flex-column",
           "justify-content-between",
           "align-items-center",
-          "p-3",
-          "text-center"
+          "p-3"
         );
 
         bookElement.innerHTML = `
@@ -38,7 +37,7 @@ fetch("../Assets/books.json")
                     </div>
                     <p id="bookTitle">${book.title}</p>
                     <p id="bookPrice">${book.price}$</p>
-                    <button class="btn">Show Details</button>
+                    <a href="../pages/view-book.html" class="btn">Show Details</a>
                 `;
 
         document.querySelector(".books").appendChild(bookElement);
