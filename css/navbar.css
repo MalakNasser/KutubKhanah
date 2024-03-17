@@ -7,21 +7,21 @@
   background-color: var(--old-lace);
 }
 
-.navbar-link{
+.navbar-link {
   text-decoration: none;
   font-weight: bold;
-  color:var(--jet-trans-75);
+  color: var(--jet-trans-75);
   position: relative;
 }
 
-.navbar-link.active{
+.navbar-link.active {
   color: var(--jet);
   font-weight: bolder;
 }
-.navbar-link.active:after{
+.navbar-link.active:after {
   width: 100%;
 }
-.navbar-link:hover{
+.navbar-link:hover {
   color: var(--jet);
   font-weight: bolder;
 }
@@ -39,4 +39,29 @@
 
 .navbar-link:hover:after {
   width: 100%;
+}
+
+.btn-dark {
+  position: relative;
+}
+
+.btn-dark::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 2px;
+  left:3px;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: 3px 3px 0px var(--jet);
+}
+
+.btn-outline-dark{
+  background-color: rgba(255, 255, 255, 0.6) ;
+  box-shadow: 3px 3px 0px var(--jet);
+}
+
+.btn-dark:hover{
+  background-color: var(--jet-trans-95);
 }

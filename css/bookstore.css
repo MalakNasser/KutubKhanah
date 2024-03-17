@@ -75,7 +75,7 @@ body {
 
 .book img {
   border: 1px solid var(--jet-trans-25);
-  border-radius: 10px 0px 10px 0px;
+  border-radius: 25px 0px 25px 0px;
 }
 
 .book-image-container {
@@ -159,11 +159,6 @@ body {
   color: rgb(255, 208, 0);
 }
 
-input[type="number"]:hover,
-input[type="number"]:focus {
-  box-shadow: 0 0 10px rgb(255, 208, 0);
-}
-
 #min-price,
 #max-price {
   width: 35%;
@@ -173,7 +168,12 @@ input[type="number"]:focus {
 }
 
 #min-price,
-#max-price,
+#max-price {
+  background-color: transparent;
+  border: var(--jet) 1px solid;
+  color: var(--jet);
+}
+
 #min-price:hover,
 #max-price:hover,
 #min-price:focus,
@@ -183,16 +183,43 @@ input[type="number"]:focus {
   background-color: transparent;
   border: var(--jet) 1px solid;
   color: var(--jet);
-  box-shadow: none;
+  box-shadow: 4px 4px 1px var(--jet-trans-95);
 }
 
 .btn-outline-warning {
   color: #000000;
+  width: 80px;
+  border-radius: 8px;
   border-color: #000000;
 }
 
 .btn-outline-warning:hover {
-  color: #fff;
-  background-color: #ffc107;
-  border-color: #ffc107;
+  color: #000000;
+  box-shadow: 4px 4px 2px var(--jet-trans-95);
+  border: var(--jet) 1px solid;
+  color: var(--jet);
+}
+
+input[type="number"] {
+  position: relative;
+  margin: 0 0 1rem;
+  border: 1px solid #bbb;
+  border-radius: 20px;
+  border-color: #bbb #ececec #ececec #bbb;
+  padding: 0.2rem;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  background: rgb(255, 208, 0)
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAKUlEQVQYlWNgwAT/sYhhKPiPT+F/LJgEsHv37v+EMGkmkuImoh2NoQAANlcun/q4OoYAAAAASUVORK5CYII=)
+    no-repeat center center;
+  width: 1em;
+  border-left: 1px solid #bbb;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
