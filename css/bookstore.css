@@ -145,6 +145,23 @@ body {
   font-weight: bold;
 }
 
+.close-search-button{
+  position: absolute;
+  top: 18px;
+  left: 138px;
+}
+
+.form-control::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.form-control::-webkit-search-decoration,
+.form-control::-webkit-search-results-button,
+.form-control::-webkit-search-results-decoration {
+  display: none;
+}
+
+
 .selected-page {
   color: rgb(255, 208, 0);
   font-weight: 800;

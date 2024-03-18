@@ -8,6 +8,17 @@ const minInput = document.getElementById("min-price");
 const maxInput = document.getElementById("max-price");
 const languageDropdown = document.getElementById("language");
 
+
+document.addEventListener("DOMContentLoaded", async function () {
+  const closeBtn = document.querySelector(".close-search-button");
+  const searchInput=document.querySelector(".srch");
+  closeBtn.addEventListener("click", () => {
+    const searchWord =null;;
+    searchInput.value = "";
+    searchBooks(searchWord);
+  });
+});
+
 const getBooks = () => {
   fetch("../Assets/books.json")
     .then((response) => response.json())
