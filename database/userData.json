@@ -35,6 +35,15 @@
       "password": "Esraa!@##!21111",
       "country": "Oman",
       "referrer": "Other"
+    },
+    {
+      "id": "11111",
+      "firstName": "Malak",
+      "lastName": "Nasser",
+      "email": "malaknasser26@gmail.com",
+      "password": "123456789@Mm",
+      "country": "Algeria",
+      "referrer": "TV AD"
     }
   ]
 }
