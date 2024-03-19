@@ -3,35 +3,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var navbarLinks = document.querySelectorAll(".navbar-link");
   var indexLink = document.querySelector('.navbar-link[href="../index.html"]');
-  var signUpBtn=document.querySelector(".btn-dark");
-  var signInBtn=document.querySelector(".btn-outline-dark");
-  
-  signUpBtn.addEventListener("click", ()=>{
+  var signUpBtn = document.querySelector(".btn-dark");
+  var signInBtn = document.querySelector(".btn-outline-dark");
+
+  signUpBtn.addEventListener("click", () => {
     try {
       window.parent.location.href = "../pages/registration.html";
     } catch (e) {
       window.location.href = "../pages/registration.html";
     }
-  })
+  });
 
-  signInBtn.addEventListener("click", ()=>{
+  signInBtn.addEventListener("click", () => {
     try {
       window.parent.location.href = "../pages/login.html";
     } catch (e) {
       window.location.href = "../pages/login.html";
     }
-  })
+  });
 
-  if (parentLocation === "/") {
-    indexLink.classList.add("active");
-  } else {
-    navbarLinks.forEach(function (link) {
-      var linkPath = link.getAttribute("href");
-      if (parentLocation.endsWith(linkPath)) {
-        link.classList.add("active");
-      }
-    });
-  }
+  navbarLinks.forEach(function (link) {
+    var linkPath = link.getAttribute("href");
+    if (parentLocation.endsWith(linkPath)) {
+      link.classList.add("active");
+    }
+  });
 
   navbarLinks.forEach(function (link) {
     link.addEventListener("click", function (event) {

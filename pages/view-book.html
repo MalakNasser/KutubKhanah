@@ -25,16 +25,17 @@
             <img
               src="../Assets/images/placeholder_book.jpg"
               class="img-fluid image"
+              id="bookImage"
             />
           </div>
           <div class="container mt-5">
-            <h5 class="auth">Author:</h5>
-            <p>author name</p>
+            <h5 class="auth" >Author:</h5>
+            <p id="bookAuthor">author name</p>
           </div>
         </div>
         <div class="col-6">
-          <h4>book title</h4>
-          <p class="category">Category</p>
+          <h4 id="bookTitle">book title</h4>
+          <p class="category" id="bookCategory">Category</p>
           <p class="desc">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis
             ex adipisci eligendi incidunt quisquam autem, quasi illum impedit,
@@ -64,7 +65,7 @@
                 />
               </div>
               <div class="col-12">
-                <p>120 pages</p>
+                <p id="bookPages">120 pages</p>
               </div>
             </div>
             <div
@@ -78,12 +79,25 @@
                 />
               </div>
               <div class="col-12">
-                <p>English</p>
+                <p id="bookLanguage">English</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-2">q</div>
+        <div class="col-2 text-center">
+          <h1 id="bookPrice">230 $</h1>
+          <div class="incr d-flex">
+            <button id="decrementBtn" class="btn">-</button>
+            <input type="text" id="numberInput" value="0" class="form-control">
+            <button id="incrementBtn" class="btn">+</button>
+          </div>
+          <button class="btn btn-cart mt-3 d-flex align-items-center">Add To Cart
+            <img src="../Assets/images/shopping-bag.png" width="20px" class="ms-1" alt="">
+          </button>
+          <button class="btn btn-wish mt-3 d-flex align-items-center">Add to Wishlist
+            <img src="../Assets/images/heart.png" width="20px" alt="">
+          </button>
+        </div>
       </div>
     </div>
     <iframe

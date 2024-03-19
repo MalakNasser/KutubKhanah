@@ -68,12 +68,17 @@ function displayBooks(page) {
                     </div>
                     <p id="bookTitle">${book.title}</p>
                     <p id="bookPrice">${book.price}$</p>
-                    <a href="../pages/view-book.html" class="btn">Show Details</a>
+                    <button class="btn show-details-btn">Show Details</button>
                 `;
+
+    bookElement.querySelector('.show-details-btn').addEventListener('click', () => {
+        window.location.href = `../pages/view-book.html?title=${encodeURIComponent(book.title)}&price=${encodeURIComponent(book.price)}&imageLink=${encodeURIComponent(book.imageLink)}&category=${encodeURIComponent(book.category)}&author=${encodeURIComponent(book.author)}&price=${encodeURIComponent(book.price)}&language=${encodeURIComponent(book.language)}&pages=${encodeURIComponent(book.pages)}`;
+    });
 
     document.querySelector(".books").appendChild(bookElement);
   }
 }
+
 
 function createPaginationButtons() {
   const paginationContainer = document.querySelector(".pagination");
