@@ -1,0 +1,55 @@
+body {
+  background-color: var(--old-lace);
+}
+
+:root {
+  --jet-trans-25: rgba(0, 0, 0, 0.25);
+  --f2dbdc: #f2dbdc;
+  --d6e8e6: #d6e8e6;
+}
+
+.outer-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 1px solid var(--jet-trans-25);
+  border-radius: 25px 0px 25px 0px;
+  min-height: 70vh;
+}
+
+.inner-div {
+  position: relative;
+  border-radius: 25px 0px 25px 0px;
+  background: linear-gradient(to bottom, var(--f2dbdc), var(--d6e8e6));
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  height: 50vh;
+}
+
+.inner-div img {
+  border-radius: 25px 0px 25px 0px;
+  height: 60vh;
+  margin-bottom: 100px;
+}
+
+span {
+  font-family: "Christmas Friday", sans-serif;
+  font-size: 16px;
+}
+
+.signature {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.signature p {
+  margin-right: 120px;
+  margin-bottom: 6px;
+}
