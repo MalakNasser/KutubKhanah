@@ -2,10 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const adminOverview = document.getElementById("adminOverview");
   const addBookForm = document.getElementById("addBookForm");
   const paginationContainer = document.getElementById("pagination");
-  const itemsPerPage = 10; // Number of items per page
-  const itemsPerRow = 5; // Number of items per row
+  const itemsPerPage = 10;
 
-  // Function to fetch data from books.json
   const fetchBooksJson = async () => {
     try {
       const response = await fetch("../Assets/books.json");
@@ -17,18 +15,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // Function to save data to local storage
   const saveDataToLocalStorage = (data) => {
     localStorage.setItem("bookData", JSON.stringify(data));
   };
 
-  // Function to load data from local storage
   const loadDataFromLocalStorage = () => {
     const data = localStorage.getItem("bookData");
     return data ? JSON.parse(data) : [];
   };
 
-  // Fetch data when the page loads
   const fetchData = () => {
     const localData = loadDataFromLocalStorage();
     if (localData.length > 0) {
@@ -38,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // Function to display data in the admin overview
   const displayData = (data, currentPage = 1) => {
     adminOverview.innerHTML = "";
 
@@ -73,40 +67,19 @@ document.addEventListener("DOMContentLoaded", function () {
       adminOverview.appendChild(card);
     });
 
-    // Update pagination
     updatePagination(data.length, currentPage);
   };
 
-  // Function to remove a book from the JSON data
   window.removeBook = (index) => {
     const localData = loadDataFromLocalStorage();
     localData.splice(index, 1);
     updateData(localData);
   };
 
-  // Function to update the displayed data and save to local storage
   const updateData = (data) => {
     const currentPage = getCurrentPage();
     displayData(data, currentPage);
-    saveDataToLocalStorage(data); // Save the updated data to local storage
-  };
-
-  // Function to save data to books.json
-  const saveDataToFile = async (data) => {
-    try {
-      const response = await fetch("books.json", {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      if (!response.ok) {
-        throw new Error("Error saving data to file");
-      }
-    } catch (error) {
-      console.error("Error saving data:", error);
-    }
+    saveDataToLocalStorage(data);
   };
 
   addBookForm.addEventListener("submit", async (event) => {
