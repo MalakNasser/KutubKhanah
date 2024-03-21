@@ -64,3 +64,167 @@ span {
   border: var(--celadon) solid 8px;
   z-index: -1;
 }
+
+.fav {
+  background-color: var(--tiffany-blue);
+  position: relative;
+  padding-bottom: 100px;
+}
+.fav::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/Assets/images/doodle.jpg);
+  opacity: 0.07;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.fav a,
+.fav h4 {
+  color: var(--jet);
+  font-weight: bold;
+}
+
+.fav a:hover {
+  color: var(--cerulean);
+}
+
+.book {
+  min-height: 330px;
+  background-color: var(--old-lace);
+  border-radius: 40px;
+  border: 2px solid var(--jet);
+  position: relative;
+}
+
+.lg-book {
+  transform: scale(1.15);
+}
+.book .yl {
+  height: 29px;
+  background-color: var(--orange-yellow);
+  border-top: 2px solid var(--jet);
+  border-bottom: 2px solid var(--jet);
+  position: absolute;
+  top: 40px;
+  left: 0px;
+}
+
+.book .img {
+  position: absolute;
+  width: 75%;
+  top: -33%;
+  left: 32px;
+  border-radius: 30px 0px 30px 0px;
+}
+.lg-book .img {
+  width: 80%;
+}
+.book .img img {
+  border-radius: 30px 0px 30px 0px;
+  position: relative;
+}
+
+.fav-books {
+  padding-top: 100px;
+}
+
+.icon-heart {
+  position: absolute;
+  bottom: -7px;
+  right: -5px;
+  background-color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.icon-heart:hover {
+  bottom: -6.5px;
+}
+.icon-heart:hover i {
+  color: red;
+}
+.icon-heart i.active {
+  color: red;
+}
+.icon-heart:hover i::before {
+  -webkit-text-stroke: 1px red;
+}
+
+.icon-heart i {
+  color: white;
+}
+
+.icon-heart i::before {
+  -webkit-text-stroke: 1px black;
+}
+
+.book .btn {
+  background-color: var(--orange-yellow);
+  border: 1.4px solid var(--jet-trans-95);
+  padding: 2px 10px 2px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: 2px 2px 1px var(--jet);
+  position: relative;
+  bottom: 0;
+  transition: filter 0.1s;
+}
+
+.book .btn:hover {
+  filter: brightness(105%);
+}
+
+.pink-parent {
+  height: 500px;
+  position: relative;
+}
+
+.pink-parent::before {
+  position: absolute;
+  content: "";
+  background-image: url(../Assets/images/pink-wallpaper.png);
+  background-size: cover;
+  opacity: 0.4;
+  width: 100%;
+  height: 500px;
+  z-index: -1;
+}
+
+.sign{
+  background-color: var(--old-lace-trans);
+  width: 80%;
+  height: 300px;
+  padding: 60px;
+  border-radius: 20px;
+  border: 2px solid var(--jet-trans-75);
+}
+
+.sign h2{
+  font-weight: 600;
+}
+
+.sign .btn {
+  background-color: var(--orange-yellow);
+  border: 1.4px solid var(--jet-trans-95);
+  padding: 4px 12px 4px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 2px 2px 1px var(--jet);
+  position: relative;
+  bottom: 0;
+  transition: filter 0.1s;
+}
+
+.sign .btn:hover {
+  filter: brightness(105%);
+}

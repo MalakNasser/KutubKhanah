@@ -46,16 +46,37 @@ function addToCart() {
   }, 1000);
 }
 
-function addToWishlist() {
-  let addedToWishlist =
-    JSON.parse(localStorage.getItem("addedToWishlist")) || [];
-  const existingItem = addedToWishlist.find(
+function checkWishlist() {
+  let addedToWishlist = JSON.parse(localStorage.getItem("addedToWishlist")) || [];
+  const existingItemIndex = addedToWishlist.findIndex(
     (wishlistItem) => wishlistItem.title === bookDetails.title
   );
 
-  if (!existingItem) addedToWishlist.push({ ...bookDetails });
+  const wishlistButton = document.querySelector(".text");
+
+  if (existingItemIndex === -1) {
+    wishlistButton.textContent = "Add to Wishlist";
+  } else {
+    wishlistButton.textContent = "Remove from Wishlist";
+  }
+}
+
+function addToWishlist() {
+  let addedToWishlist = JSON.parse(localStorage.getItem("addedToWishlist")) || [];
+  const existingItemIndex = addedToWishlist.findIndex(
+    (wishlistItem) => wishlistItem.title === bookDetails.title
+  );
+
+  if (existingItemIndex === -1) {
+    addedToWishlist.push({ ...bookDetails });
+  } else {
+    addedToWishlist.splice(existingItemIndex, 1);
+  }
 
   localStorage.setItem("addedToWishlist", JSON.stringify(addedToWishlist));
-
   console.log(localStorage.getItem("addedToWishlist"));
+
+  checkWishlist();
 }
+
+window.addEventListener('DOMContentLoaded', checkWishlist);

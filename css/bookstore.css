@@ -38,7 +38,7 @@ body {
 
 .btn-yellow,
 .btn-yellow:hover {
-  background-color: rgb(255, 208, 0);
+  background-color: var(--orange-yellow);
   box-shadow: 4px 4px 2px var(--jet-trans-95);
 }
 
@@ -67,7 +67,7 @@ body {
 
 .book {
   background-color: white;
-  height: 330px;
+  min-height: 330px;
   border-radius: 10px;
   border: 1px solid var(--jet-trans-25);
   position: relative;
@@ -125,7 +125,7 @@ body {
 }
 
 .book .btn {
-  background-color: rgb(255, 208, 0);
+  background-color: var(--orange-yellow);
   border: 1.4px solid var(--jet-trans-95);
   padding: 2px 10px 2px 10px;
   font-size: 12px;
@@ -166,7 +166,7 @@ body {
 
 
 .selected-page {
-  color: rgb(255, 208, 0);
+  color: var(--orange-yellow);
   font-weight: 800;
   font-size: 20px;
 }
@@ -176,7 +176,7 @@ body {
 }
 
 .clickable-header:hover {
-  color: rgb(255, 208, 0);
+  color: var(--orange-yellow);
 }
 
 #min-price,
@@ -232,7 +232,7 @@ input[type="number"] {
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  background: rgb(255, 208, 0)
+  background: var(--orange-yellow)
     url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAKUlEQVQYlWNgwAT/sYhhKPiPT+F/LJgEsHv37v+EMGkmkuImoh2NoQAANlcun/q4OoYAAAAASUVORK5CYII=)
     no-repeat center center;
   width: 1em;

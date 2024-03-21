@@ -1,6 +1,7 @@
 .container-fluid {
   height: 100px;
   background-color: var(--old-lace);
+  z-index: 99999999;
 }
 
 .container {

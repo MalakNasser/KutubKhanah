@@ -31,6 +31,15 @@ const getBooks = () => {
 
       displayBooks(currentPage);
       createPaginationButtons();
+
+      const addedToWishlist = JSON.parse(localStorage.getItem("addedToWishlist")) || [];
+      books.forEach((book) => {
+        const heartIcons = document.querySelectorAll(`.book img[src="${book.imageLink}"] + .icon-heart i`);
+        const existingItem = addedToWishlist.find((wishlistItem) => wishlistItem.title === book.title);
+        if (existingItem) {
+          heartIcons.forEach(icon => icon.classList.add('active'));
+        }
+      });
     })
     .catch((error) => console.error("Error fetching JSON:", error));
 };
@@ -130,7 +139,8 @@ function createPaginationButtons() {
     const button = document.createElement("button");
     button.textContent = i;
     button.classList.add("pagination-button");
-    if (i == currentPage) {
+    if (i == currentPage)
+    {
       button.classList.add("selected-page");
     }
     button.addEventListener("click", () => {
@@ -174,7 +184,7 @@ function populateCategories(data) {
       .join("");
 
   const viewAll = document.querySelector("#category-selection .all");
-  viewAll.style.color = "rgb(255, 208, 0)";
+  viewAll.style.color = "var(--orange-yellow)";
 
   const categoryElements = document.querySelectorAll(
     "#category-selection h6:not(.all)"
@@ -188,7 +198,9 @@ function populateCategories(data) {
   viewAll.addEventListener("click", () => {
     viewAllBooks();
     removeColorFromCategories();
-    viewAll.style.color = "rgb(255, 208, 0)";
+    viewAll.style.color = "var(--orange-yellow)";
+
+    checkWishlistItems();
   });
 
   categoryElements.forEach((element) => {
@@ -196,7 +208,9 @@ function populateCategories(data) {
       const category = element.textContent.trim();
       filterDataByCategory(category);
       removeColorFromCategories();
-      element.style.color = "rgb(255, 208, 0)";
+      element.style.color = "var(--orange-yellow)";
+
+      checkWishlistItems();
     });
   });
 }
@@ -350,7 +364,7 @@ function sortBooks(option) {
       books.sort((a, b) => a.title.localeCompare(b.title));
       break;
     case "titleDesc":
-      books.sort((a, b) => b.title.localeCompare(a.title));
+      books.sort((a, b)=> b.title.localeCompare(a.title));
       break;
     case "priceAsc":
       books.sort((a, b) => a.price - b.price);
@@ -376,6 +390,8 @@ document.querySelectorAll(".sort-option").forEach((item) => {
     }
     activeFilters.sortOption = sortOption;
     applyAllFilters();
+
+    checkWishlistItems();
   });
 });
 
@@ -393,4 +409,19 @@ function addToWishlist() {
   localStorage.setItem("addedToWishlist", JSON.stringify(addedToWishlist));
 
   console.log(localStorage.getItem("addedToWishlist"));
+}
+
+function checkWishlistItems() {
+  const addedToWishlist = JSON.parse(localStorage.getItem("addedToWishlist")) || [];
+  books.forEach((book) => {
+    const heartIcons = document.querySelectorAll(`.book img[src="${book.imageLink}"] + .icon-heart i`);
+    const existingItem = addedToWishlist.find((wishlistItem) => wishlistItem.title === book.title);
+    heartIcons.forEach(icon => {
+      if (existingItem) {
+        icon.classList.add('active');
+      } else {
+        icon.classList.remove('active');
+      }
+    });
+  });
 }
