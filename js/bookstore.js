@@ -2,18 +2,18 @@ const itemsPerPage = 20;
 let currentPage = 1;
 let books = [];
 allBooks = [];
+let itemIdCounter = 1;
 let totalPages = 0;
 const categorySelector = document.getElementById("category-selection");
 const minInput = document.getElementById("min-price");
 const maxInput = document.getElementById("max-price");
 const languageDropdown = document.getElementById("language");
 
-
 document.addEventListener("DOMContentLoaded", async function () {
   const closeBtn = document.querySelector(".close-search-button");
-  const searchInput=document.querySelector(".srch");
+  const searchInput = document.querySelector(".srch");
   closeBtn.addEventListener("click", () => {
-    const searchWord =null;;
+    const searchWord = null;
     searchInput.value = "";
     searchBooks(searchWord);
   });
@@ -71,14 +71,30 @@ function displayBooks(page) {
                     <button class="btn show-details-btn">Show Details</button>
                 `;
 
-    bookElement.querySelector('.show-details-btn').addEventListener('click', () => {
-        window.location.href = `../pages/view-book.html?title=${encodeURIComponent(book.title)}&price=${encodeURIComponent(book.price)}&imageLink=${encodeURIComponent(book.imageLink)}&category=${encodeURIComponent(book.category)}&author=${encodeURIComponent(book.author)}&price=${encodeURIComponent(book.price)}&language=${encodeURIComponent(book.language)}&pages=${encodeURIComponent(book.pages)}`;
-    });
+              
+
+    bookElement
+      .querySelector(".show-details-btn")
+      .addEventListener("click", () => {
+        const bookDetails = {
+          id: itemIdCounter++,
+          title: book.title,
+          price: book.price,
+          imageLink: book.imageLink,
+          category: book.category,
+          author: book.author,
+          price: book.price,
+          language: book.language,
+          pages: book.pages,
+        };
+
+        localStorage.setItem("bookDetails", JSON.stringify(bookDetails));
+        window.location.href = "../pages/view-book.html";
+      });
 
     document.querySelector(".books").appendChild(bookElement);
   }
 }
-
 
 function createPaginationButtons() {
   const paginationContainer = document.querySelector(".pagination");
