@@ -66,6 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (books.length === 0) {
       const placeholder = document.createElement("div");
       placeholder.textContent = "Cart is empty";
+      checkoutBtn.disabled = true;
+
       cartContainer.appendChild(placeholder);
       return;
     }
