@@ -13,69 +13,39 @@
       max-width: 100px;
       height: auto;
     }
+    .card-img {
+      max-width: 100px; /* Set max-width for the image */
+      height: auto; /* Maintain aspect ratio */
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+  <iframe
+  src="../components/navbar.html?page=../index.html"
+  frameborder="0"
+  width="100%"
+  height="100px"
+  scrolling="no"
+  class="fixed-top"
+></iframe>
+<br>
+<br>
+
+  <div class="container mt-5">
     <h1>My Wishlist</h1>
 
-    <div class="row">
-      <div class="col-md-4">
-        <!-- Wishlist Display -->
-        <aside id="wishlistAside" class="mb-3"></aside>
-      </div>
-      <div class="col-md-8">
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Related Products</h5>
-            <div class="row row-cols-1 row-cols-md-2 g-4">
-              <!-- Product 1 -->
-              <div class="col">
-                <div class="card">
-                  <img src="../Assets/Images/javaprog.jpg" class="card-img-top product-img" alt="Java Programming">
-                  <div class="card-body">
-                    <h6 class="card-title">Java Programming</h6>
-                    <p class="card-text">A comprehensive guide to Java programming language.</p>
-                    <p class="card-text">Author: John Doe</p>
-                    <p class="card-text">Price: $29.99</p>
-                    <button class="btn btn-primary btn-sm" onclick="addToWishlist('Java Programming', 'A comprehensive guide to Java programming language.', 'John Doe', 29.99, '../Assets/Images/javaprog.jpg')">Add to Wishlist</button>
-                  </div>
-                </div>
-              </div>
-              <!-- Product 2 -->
-              <div class="col">
-                <div class="card">
-                  <img src="../Assets/Images/pyth.jpg" class="card-img-top product-img" alt="Python Cookbook">
-                  <div class="card-body">
-                    <h6 class="card-title">Python Cookbook</h6>
-                    <p class="card-text">Learn Python programming with practical examples and recipes.</p>
-                    <p class="card-text">Author: Jane Smith</p>
-                    <p class="card-text">Price: $34.99</p>
-                    <button class="btn btn-primary btn-sm" onclick="addToWishlist('Python Cookbook', 'Learn Python programming with practical examples and recipes.', 'Jane Smith', 34.99, '../Assets/Images/pyth.jpg')">Add to Wishlist</button>
-                  </div>
-                </div>
-              </div>
-              <!-- Product 3 -->
-              <div class="col">
-                <div class="card">
-                  <img src="../Assets/Images/mysql.jpg" class="card-img-top product-img" alt="MySQL Mastery">
-                  <div class="card-body">
-                    <h6 class="card-title">MySQL Mastery</h6>
-                    <p class="card-text">Master MySQL database management and optimization techniques.</p>
-                    <p class="card-text">Author: James Brown</p>
-                    <p class="card-text">Price: $27.99</p>
-                    <button class="btn btn-primary btn-sm" onclick="addToWishlist('MySQL Mastery', 'Master MySQL database management and optimization techniques.', 'James Brown', 27.99, '../Assets/Images/mysql.jpg')">Add to Wishlist</button>
-                  </div>
-                </div>
-              </div>
-              <!-- Add more products here -->
-            </div>
-          </div>
-        </div>
-      </div>
+    <div id="wishlistContainer" class="row">
+      <!-- Wishlist items will be displayed here -->
     </div>
   </div>
-
+  <iframe
+  src="../components/footer.html"
+  frameborder="0"
+  width="100%"
+  height="250px"
+  scrolling="no"
+  class="position-absolute mt-5"
+></iframe>
   <script src="../js/wishlist.js"></script>
 </body>
 </html>
