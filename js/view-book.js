@@ -4,7 +4,7 @@ const numberInput = document.getElementById("numberInput");
 
 decrementBtn.addEventListener("click", () => {
   numberInput.value =
-    numberInput.value > 0 ? parseInt(numberInput.value) - 1 : 0;
+    numberInput.value > 1 ? parseInt(numberInput.value) - 1 : 1;
 });
 
 incrementBtn.addEventListener("click", () => {
@@ -32,13 +32,27 @@ if (bookDetails) {
 function addToCart() {
   let addedToCart = JSON.parse(localStorage.getItem("addedToCart")) || [];
   const existingItem = addedToCart.find(
-    (cartItem) => cartItem.id === bookDetails.id
+    (cartItem) => cartItem.title === bookDetails.title
   );
-
   if (existingItem) {
     existingItem.quantity += parseInt(numberInput.value);
   } else {
     addedToCart.push({ ...bookDetails, quantity: parseInt(numberInput.value) });
   }
   localStorage.setItem("addedToCart", JSON.stringify(addedToCart));
+  console.log(localStorage.getItem("addedToCart"));
+}
+
+function addToWishlist() {
+  let addedToWishlist =
+    JSON.parse(localStorage.getItem("addedToWishlist")) || [];
+  const existingItem = addedToWishlist.find(
+    (wishlistItem) => wishlistItem.title === bookDetails.title
+  );
+
+  if (!existingItem) addedToWishlist.push({ ...bookDetails });
+
+  localStorage.setItem("addedToWishlist", JSON.stringify(addedToWishlist));
+
+  console.log(localStorage.getItem("addedToWishlist"));
 }

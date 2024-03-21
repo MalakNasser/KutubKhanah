@@ -2,7 +2,6 @@ const itemsPerPage = 20;
 let currentPage = 1;
 let books = [];
 allBooks = [];
-let itemIdCounter = 1;
 let totalPages = 0;
 const categorySelector = document.getElementById("category-selection");
 const minInput = document.getElementById("min-price");
@@ -77,7 +76,6 @@ function displayBooks(page) {
       .querySelector(".show-details-btn")
       .addEventListener("click", () => {
         const bookDetails = {
-          id: itemIdCounter++,
           title: book.title,
           price: book.price,
           imageLink: book.imageLink,
