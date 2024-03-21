@@ -101,10 +101,13 @@ body {
   bottom: -6.5px;
 }
 .icon-heart:hover i {
-  color: rgb(255, 208, 0);
+  color: red;
+}
+.icon-heart i.active{
+  color: red;
 }
 .icon-heart:hover i::before {
-  -webkit-text-stroke: 1px rgb(255, 208, 0);
+  -webkit-text-stroke: 1px red;
 }
 
 .icon-heart i {

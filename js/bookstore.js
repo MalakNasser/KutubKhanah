@@ -70,8 +70,6 @@ function displayBooks(page) {
                     <button class="btn show-details-btn">Show Details</button>
                 `;
 
-              
-
     bookElement
       .querySelector(".show-details-btn")
       .addEventListener("click", () => {
@@ -89,6 +87,24 @@ function displayBooks(page) {
         localStorage.setItem("bookDetails", JSON.stringify(bookDetails));
         window.location.href = "../pages/view-book.html";
       });
+    bookElement.querySelector(".icon-heart").addEventListener("click", () => { 
+      let addedToWishlist =
+        JSON.parse(localStorage.getItem("addedToWishlist")) || [];
+        const existingItemIndex = addedToWishlist.findIndex(wishlistItem => wishlistItem.title === book.title);
+
+
+      if (existingItemIndex === -1) {
+        addedToWishlist.push({ ...book });
+    } else {
+        addedToWishlist.splice(existingItemIndex, 1);
+    }
+
+
+      localStorage.setItem("addedToWishlist", JSON.stringify(addedToWishlist));
+      const heartIcon = bookElement.querySelector(".icon-heart i");
+      heartIcon.classList.toggle("active");
+      console.log(localStorage.getItem("addedToWishlist"));
+    });
 
     document.querySelector(".books").appendChild(bookElement);
   }
@@ -337,3 +353,17 @@ document.querySelectorAll(".sort-option").forEach((item) => {
 });
 
 getBooks();
+
+function addToWishlist() {
+  let addedToWishlist =
+    JSON.parse(localStorage.getItem("addedToWishlist")) || [];
+  const existingItem = addedToWishlist.find(
+    (wishlistItem) => wishlistItem.title === bookDetails.title
+  );
+
+  if (!existingItem) addedToWishlist.push({ ...bookDetails });
+
+  localStorage.setItem("addedToWishlist", JSON.stringify(addedToWishlist));
+
+  console.log(localStorage.getItem("addedToWishlist"));
+}
