@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wishlist Page</title>
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    /* Custom styles go here */
+    .product-img {
+      max-width: 100px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>My Wishlist</h1>
+
+    <div class="row">
+      <div class="col-md-4">
+        <!-- Wishlist Display -->
+        <aside id="wishlistAside" class="mb-3"></aside>
+      </div>
+      <div class="col-md-8">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Related Products</h5>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+              <!-- Product 1 -->
+              <div class="col">
+                <div class="card">
+                  <img src="Assets/Images/javaprog.jpg" class="card-img-top product-img" alt="Java Programming">
+                  <div class="card-body">
+                    <h6 class="card-title">Java Programming</h6>
+                    <p class="card-text">A comprehensive guide to Java programming language.</p>
+                    <p class="card-text">Author: John Doe</p>
+                    <p class="card-text">Price: $29.99</p>
+                    <button class="btn btn-primary btn-sm" onclick="addToWishlist('Java Programming', 'A comprehensive guide to Java programming language.', 'John Doe', 29.99, '/Assets/Images/javaprog.jpg')">Add to Wishlist</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Product 2 -->
+              <div class="col">
+                <div class="card">
+                  <img src="Assets/Images/pyth.jpg" class="card-img-top product-img" alt="Python Cookbook">
+                  <div class="card-body">
+                    <h6 class="card-title">Python Cookbook</h6>
+                    <p class="card-text">Learn Python programming with practical examples and recipes.</p>
+                    <p class="card-text">Author: Jane Smith</p>
+                    <p class="card-text">Price: $34.99</p>
+                    <button class="btn btn-primary btn-sm" onclick="addToWishlist('Python Cookbook', 'Learn Python programming with practical examples and recipes.', 'Jane Smith', 34.99, '/Assets/Images/pyth.jpg')">Add to Wishlist</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Product 3 -->
+              <div class="col">
+                <div class="card">
+                  <img src="Assets/Images/mysql.jpg" class="card-img-top product-img" alt="MySQL Mastery">
+                  <div class="card-body">
+                    <h6 class="card-title">MySQL Mastery</h6>
+                    <p class="card-text">Master MySQL database management and optimization techniques.</p>
+                    <p class="card-text">Author: James Brown</p>
+                    <p class="card-text">Price: $27.99</p>
+                    <button class="btn btn-primary btn-sm" onclick="addToWishlist('MySQL Mastery', 'Master MySQL database management and optimization techniques.', 'James Brown', 27.99, '/Assets/Images/mysql.jpg')">Add to Wishlist</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Add more products here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="wishlist.js"></script>
+</body>
+</html>
