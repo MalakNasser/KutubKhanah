@@ -38,3 +38,38 @@ body {
   min-height: 120px;
   font-weight: 500;
 }
+
+.incr input,.incr input:focus,.incr input:enabled{
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.incr{
+  border: 1px solid var(--jet);
+  border-radius: 8px;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.btn-cart, .btn-cart:hover,.btn-wish,.btn-wish:hover{
+  background-color: var(--celadon);
+  color: var(--jet);
+  font-weight: 600;
+  padding: 5px 20px 5px 20px;
+  border: 1px solid var(--jet);
+  width: fit-content;
+  box-shadow: 2px 2px 0px var(--jet);
+}
+
+.btn-wish,.btn-wish:hover{
+  background-color: var(--salmon-pink);
+}
+
+.btn-cart:hover,.btn-wish:hover{
+  filter: brightness(110%);
+}

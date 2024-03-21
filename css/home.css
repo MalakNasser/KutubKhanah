@@ -1,3 +1,66 @@
-body{
-    background-color: var(--old-lace);
+body {
+  background-color: var(--old-lace);
+}
+span {
+  color: var(--cerulean);
+  font-weight: bold;
+}
+
+.images {
+  position: relative;
+  height: 400px;
+}
+
+.image-container {
+  position: absolute;
+  width: 180px;
+  border-radius: 90px 90px 0px 0px;
+}
+.image {
+  position: relative;
+  border-radius: 90px 90px 0px 0px;
+  width: 100%;
+  height: 100%;
+}
+.image::after {
+  border-radius: 90px 90px 0px 0px;
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--jet-trans-75);
+}
+.image::before {
+  border-radius: 90px 90px 0px 0px;
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+  border: 2px solid var(--jet-trans-75);
+}
+
+.image img {
+  border-radius: 80px 80px 0px 0px;
+}
+
+.image-1 {
+  top: 0px;
+  left: 0px;
+  border: var(--salmon-pink) solid 8px;
+}
+
+.image-2 {
+  top: 120px;
+  left: 130px;
+  border: var(--cerulean) solid 8px;
+}
+.image-3 {
+  top: 60px;
+  left: 250px;
+  border: var(--celadon) solid 8px;
+  z-index: -1;
 }

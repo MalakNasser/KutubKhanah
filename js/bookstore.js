@@ -8,12 +8,11 @@ const minInput = document.getElementById("min-price");
 const maxInput = document.getElementById("max-price");
 const languageDropdown = document.getElementById("language");
 
-
 document.addEventListener("DOMContentLoaded", async function () {
   const closeBtn = document.querySelector(".close-search-button");
-  const searchInput=document.querySelector(".srch");
+  const searchInput = document.querySelector(".srch");
   closeBtn.addEventListener("click", () => {
-    const searchWord =null;;
+    const searchWord = null;
     searchInput.value = "";
     searchBooks(searchWord);
   });
@@ -68,8 +67,44 @@ function displayBooks(page) {
                     </div>
                     <p id="bookTitle">${book.title}</p>
                     <p id="bookPrice">${book.price}$</p>
-                    <a href="../pages/view-book.html" class="btn">Show Details</a>
+                    <button class="btn show-details-btn">Show Details</button>
                 `;
+
+    bookElement
+      .querySelector(".show-details-btn")
+      .addEventListener("click", () => {
+        const bookDetails = {
+          title: book.title,
+          price: book.price,
+          imageLink: book.imageLink,
+          category: book.category,
+          author: book.author,
+          price: book.price,
+          language: book.language,
+          pages: book.pages,
+        };
+
+        localStorage.setItem("bookDetails", JSON.stringify(bookDetails));
+        window.location.href = "../pages/view-book.html";
+      });
+    bookElement.querySelector(".icon-heart").addEventListener("click", () => { 
+      let addedToWishlist =
+        JSON.parse(localStorage.getItem("addedToWishlist")) || [];
+        const existingItemIndex = addedToWishlist.findIndex(wishlistItem => wishlistItem.title === book.title);
+
+
+      if (existingItemIndex === -1) {
+        addedToWishlist.push({ ...book });
+    } else {
+        addedToWishlist.splice(existingItemIndex, 1);
+    }
+
+
+      localStorage.setItem("addedToWishlist", JSON.stringify(addedToWishlist));
+      const heartIcon = bookElement.querySelector(".icon-heart i");
+      heartIcon.classList.toggle("active");
+      console.log(localStorage.getItem("addedToWishlist"));
+    });
 
     document.querySelector(".books").appendChild(bookElement);
   }
@@ -318,3 +353,17 @@ document.querySelectorAll(".sort-option").forEach((item) => {
 });
 
 getBooks();
+
+function addToWishlist() {
+  let addedToWishlist =
+    JSON.parse(localStorage.getItem("addedToWishlist")) || [];
+  const existingItem = addedToWishlist.find(
+    (wishlistItem) => wishlistItem.title === bookDetails.title
+  );
+
+  if (!existingItem) addedToWishlist.push({ ...bookDetails });
+
+  localStorage.setItem("addedToWishlist", JSON.stringify(addedToWishlist));
+
+  console.log(localStorage.getItem("addedToWishlist"));
+}
