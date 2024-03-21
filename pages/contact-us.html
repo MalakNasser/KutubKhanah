@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/contact-us.css" />
+    <link rel="icon" href="../Assets/images/logoIcon.png" type="image/png" />
+    <script src="/js/contact-us.js"></script>
+    <title>Contact Us</title>
+  </head>
+
+  <body>
+    <!-- NavBar -->
+    <iframe
+      src="../components/navbar.html?page=../pages/index.html"
+      frameborder="0"
+      width="100%"
+      height="100px"
+      scrolling="no"
+      class="fixed-top"
+    ></iframe>
+
+    <!-- Flexbox container for aligning the toasts -->
+    <div
+      aria-live="polite"
+      aria-atomic="true"
+      class="toast-container d-flex justify-content-center align-items-center"
+      id="toastContainer"
+    >
+      <!-- Then put toasts within -->
+      <div
+        class="toast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        id="passwordToast"
+      >
+        <div class="toast-header bg-danger text-white">
+          <strong class="mr-auto">CONTACT US</strong>
+          <button
+            type="button"
+            class="ml-2 mb-1 close text-white"
+            data-dismiss="toast"
+            aria-label="Close"
+          >
+            <span
+              aria-hidden="true"
+              style="font-size: 18px; color: black; font-weight: bolder"
+              >&times;</span
+            >
+          </button>
+        </div>
+        <div class="toast-body">
+        </div>
+      </div>
+    </div>
+
+    <!-- main section -->
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6 text-center mb-5">
+            <h2 class="heading-section">Contact Us</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-10 col-md-12">
+            <div class="wrapper">
+              <div class="row justify-content-center">
+                <div class="col-lg-8 mb-5">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="dbox w-100 text-center">
+                        <div
+                          class="icon d-flex align-items-center justify-content-center"
+                        >
+                          <span class="fa fa-map-marker"></span>
+                        </div>
+                        <div class="text">
+                          <p>
+                            <span>Address:</span> Mahmoud Salamah, Kom Ad Dakah
+                            Gharb, Al Attarin
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="dbox w-100 text-center">
+                        <div
+                          class="icon d-flex align-items-center justify-content-center"
+                        >
+                          <span class="fa fa-phone"></span>
+                        </div>
+                        <div class="text">
+                          <p>
+                            <span>Phone:</span>
+                            <a href="tel://1234567920">03 3906924</a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="dbox w-100 text-center">
+                        <div
+                          class="icon d-flex align-items-center justify-content-center"
+                        >
+                          <span class="fa fa-paper-plane"></span>
+                        </div>
+                        <div class="text">
+                          <p>
+                            <span>Email:</span>
+                            <a
+                              class="emaill"
+                              href="/cdn-cgi/l/email-protection#f69f989099b68f998384859f8293d895999b"
+                              >kutubkhana@gmail.com</a
+                            >
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="col-lg-8">
+                  <div class="contact-wrap">
+              <hr  style="height:2px;border-width:0;color:gray;background-color:gray; width: 600px;">
+                    <br>
+                    <h3 class="mb-4 text-center">Get in touch with us</h3>
+                    <div
+                      id="form-message-warning"
+                      class="mb-4 w-100 text-center"
+                    ></div>
+                    
+
+                    <form
+                      method="POST"
+                      id="contactForm"
+                      name="contactForm"
+                      class="contactForm"
+                    >
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              class="form-control form-name"
+                              name="name"
+                              id="name"
+                              placeholder="Name"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <input
+                              type="email"
+                              class="form-control form-email"
+                              name="email"
+                              id="email"
+                              placeholder="Email"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              class="form-control form-subject"
+                              name="subject"
+                              id="subject"
+                              placeholder="Subject"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <textarea
+                              name="message"
+                              class="form-control form-message"
+                              id="message"
+                              cols="30"
+                              rows="8"
+                              placeholder="Message"
+                            ></textarea>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <input
+                              type="submit"
+                              value="Send Message"
+                              class="btn btn-primary send-message"
+                            />
+                            <!-- <div class="submitting"></div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <iframe
+      src="../components/footer.html"
+      frameborder="0"
+      width="100%"
+      height="250px"
+      scrolling="no"
+      class="position-absolute mt-5"
+    ></iframe>
+
+ </body>
+</html>
