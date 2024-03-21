@@ -42,7 +42,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateCartDisplay() {
     cartContainer.innerHTML = "";
-    displayBooks(cartItems);
+    if (cartItems.length === 0) {
+      const placeholder = document.createElement("div");
+      placeholder.textContent = "Cart is empty";
+      cartContainer.appendChild(placeholder);
+      checkoutBtn.disabled = true;
+    } else {
+      displayBooks(cartItems);
+      checkoutBtn.disabled = false;
+    }
     localStorage.setItem("addedToCart", JSON.stringify(cartItems));
   }
 

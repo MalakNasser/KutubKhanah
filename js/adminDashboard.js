@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
           Category: ${book.category}<br>
           <img src="${book.imageLink}" alt="${book.title}" class="img-fluid">
         </p>
-        <button type="button" class="btn btn-danger" onclick="removeBook(${
+        <button type="button" class="rmbtn btn-danger" onclick="removeBook(${
           startIndex + index
         })">Remove</button>
       </div>

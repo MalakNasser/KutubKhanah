@@ -41,6 +41,9 @@ function addToCart() {
   }
   localStorage.setItem("addedToCart", JSON.stringify(addedToCart));
   console.log(localStorage.getItem("addedToCart"));
+  setTimeout(function () {
+    window.location.href = "../pages/Cart.html";
+  }, 1000);
 }
 
 function addToWishlist() {
