@@ -87,18 +87,18 @@ function displayBooks(page) {
         localStorage.setItem("bookDetails", JSON.stringify(bookDetails));
         window.location.href = "../pages/view-book.html";
       });
-    bookElement.querySelector(".icon-heart").addEventListener("click", () => { 
+    bookElement.querySelector(".icon-heart").addEventListener("click", () => {
       let addedToWishlist =
         JSON.parse(localStorage.getItem("addedToWishlist")) || [];
-        const existingItemIndex = addedToWishlist.findIndex(wishlistItem => wishlistItem.title === book.title);
-
+      const existingItemIndex = addedToWishlist.findIndex(
+        (wishlistItem) => wishlistItem.title === book.title
+      );
 
       if (existingItemIndex === -1) {
         addedToWishlist.push({ ...book });
-    } else {
+      } else {
         addedToWishlist.splice(existingItemIndex, 1);
-    }
-
+      }
 
       localStorage.setItem("addedToWishlist", JSON.stringify(addedToWishlist));
       const heartIcon = bookElement.querySelector(".icon-heart i");
@@ -167,16 +167,35 @@ function populateCategories(data) {
   const categories = [...new Set(data.map((book) => book.category))].sort(
     (a, b) => a.localeCompare(b)
   );
-  categorySelector.innerHTML = categories
-    .map((category) => `<h6 class="clickable-header">${category}</h6>`)
-    .join("");
+  categorySelector.innerHTML =
+    `<h6 class="clickable-header all">All Books<h6>` +
+    categories
+      .map((category) => `<h6 class="clickable-header">${category}</h6>`)
+      .join("");
 
-  const categoryElements = document.querySelectorAll("#category-selection h6");
+  const viewAll = document.querySelector("#category-selection .all");
+  viewAll.style.color = "rgb(255, 208, 0)";
+
+  const categoryElements = document.querySelectorAll(
+    "#category-selection h6:not(.all)"
+  );
+
+  const removeColorFromCategories = () => {
+    categoryElements.forEach((el) => (el.style.color = ""));
+    viewAll.style.color = "";
+  };
+
+  viewAll.addEventListener("click", () => {
+    viewAllBooks();
+    removeColorFromCategories();
+    viewAll.style.color = "rgb(255, 208, 0)";
+  });
+
   categoryElements.forEach((element) => {
     element.addEventListener("click", () => {
       const category = element.textContent.trim();
       filterDataByCategory(category);
-      categoryElements.forEach((el) => (el.style.color = ""));
+      removeColorFromCategories();
       element.style.color = "rgb(255, 208, 0)";
     });
   });
@@ -235,6 +254,7 @@ let activeFilters = {
   price: null,
   category: null,
   searchWord: null,
+  sortOption: null,
 };
 
 function applyAllFilters() {
@@ -257,13 +277,13 @@ function applyAllFilters() {
   }
 
   if (activeFilters.searchWord) {
-    console.log(activeFilters.searchWord);
     books = books.filter((book) => {
       const bookTitle = book.title.toLowerCase();
       return bookTitle.includes(activeFilters.searchWord.toLowerCase());
     });
-    console.log(books);
   }
+  console.log(activeFilters.sortOption);
+  sortBooks(activeFilters.sortOption);
 
   currentPage = 1;
   displayBooks(currentPage);
@@ -290,6 +310,11 @@ function searchBooks(word) {
   applyAllFilters();
 }
 
+function viewAllBooks() {
+  activeFilters.category = null;
+  applyAllFilters();
+}
+
 document.getElementById("clearLanguageFilter").addEventListener("click", () => {
   document.getElementById("languageDropdown").innerText = "Filter by Language";
   activeFilters.language = null;
@@ -305,10 +330,12 @@ document.getElementById("clearPriceFilter").addEventListener("click", () => {
 });
 
 document.getElementById("Reset").addEventListener("click", () => {
+  const currentSortOption = activeFilters.sortOption;
   activeFilters = {
     language: null,
     price: null,
     category: activeFilters.category,
+    sortOption: currentSortOption,
   };
   document.getElementById("languageDropdown").innerText = "Filter by Language";
   applyAllFilters();
@@ -316,6 +343,7 @@ document.getElementById("Reset").addEventListener("click", () => {
 
 //Sorting
 function sortBooks(option) {
+  activeFilters.sortOption = option;
   sortBy = option;
   switch (option) {
     case "titleAsc":
@@ -333,9 +361,6 @@ function sortBooks(option) {
     default:
       break;
   }
-  currentPage = 1;
-  displayBooks(currentPage);
-  createPaginationButtons();
 }
 
 document.querySelectorAll(".sort-option").forEach((item) => {
@@ -349,6 +374,8 @@ document.querySelectorAll(".sort-option").forEach((item) => {
       sortBooks(sortOption);
       document.getElementById("sortDropdown").innerText = item.innerText;
     }
+    activeFilters.sortOption = sortOption;
+    applyAllFilters();
   });
 });
 
