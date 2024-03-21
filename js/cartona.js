@@ -1,3 +1,31 @@
+// document.addEventListener("DOMContentLoaded", function () {
+//   const cartContainer = document.getElementById("cart-container");
+//   const checkoutBtn = document.getElementById("checkoutBtn");
+//   const totalDisplay = document.getElementById("totalDisplay");
+//   const toastContainer = document.getElementById("toastContainer");
+//   let cartItems = [];
+
+//   fetch("../Assets/books.json")
+//     .then((response) => response.json())
+//     .then((data) => {
+//       cartItems = data.slice(0, 4).map((item) => ({ ...item, quantity: 1 }));
+//       displayBooks(cartItems);
+//       updateTotalDisplay();
+//     });
+
+//   function updateCartDisplay() {
+//     cartContainer.innerHTML = "";
+//     displayBooks(cartItems);
+//   }
+
+//   function updateTotalDisplay() {
+//     const totalPrice = cartItems.reduce(
+//       (total, item) => total + item.price * item.quantity,
+//       0
+//     );
+//     totalDisplay.innerText = `Total: $${totalPrice.toFixed(2)}`;
+//   }
+
 document.addEventListener("DOMContentLoaded", function () {
   const cartContainer = document.getElementById("cart-container");
   const checkoutBtn = document.getElementById("checkoutBtn");
@@ -5,17 +33,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const toastContainer = document.getElementById("toastContainer");
   let cartItems = [];
 
-  fetch("../Assets/books.json")
-    .then((response) => response.json())
-    .then((data) => {
-      cartItems = data.slice(0, 4).map((item) => ({ ...item, quantity: 1 }));
-      displayBooks(cartItems);
-      updateTotalDisplay();
-    });
+  const storedCartItems = localStorage.getItem("addedToCart");
+  if (storedCartItems) {
+    cartItems = JSON.parse(storedCartItems);
+    updateTotalDisplay();
+    displayBooks(cartItems);
+  }
 
   function updateCartDisplay() {
     cartContainer.innerHTML = "";
     displayBooks(cartItems);
+    localStorage.setItem("addedToCart", JSON.stringify(cartItems));
   }
 
   function updateTotalDisplay() {
@@ -27,34 +55,41 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function displayBooks(books) {
+    if (books.length === 0) {
+      const placeholder = document.createElement("div");
+      placeholder.textContent = "Cart is empty";
+      cartContainer.appendChild(placeholder);
+      return;
+    }
+
     books.forEach((book) => {
       const bookCard = document.createElement("div");
       bookCard.classList.add("card");
       bookCard.innerHTML = `
-        <img src="${book.imageLink}" class="card-img-top" alt="${book.title}">
-        <div class="card-body">
-          <h5 class="card-title">${book.title}</h5>
-          <p class="card-text">${book.author}</p>
-          <p class="card-text">$${book.price.toFixed(2)}</p>
-          <div class="quantity-container">
-            <label for="quantity-${
-              book.title
-            }" class="quantity-label">Quantity:</label>
-            <input type="number" id="quantity-${
-              book.title
-            }" class="quantity-input" value="${book.quantity}" min="1">
-            <button class="btn btn-secondary btn-increase quantity-button" data-book-title="${
-              book.title
-            }">+</button>
-            <button class="btn btn-secondary btn-decrease quantity-button" data-book-title="${
-              book.title
-            }">-</button>
-          </div>
-          <button class="btn btn-danger btn-remove" data-book-title="${
+      <img src="${book.imageLink}" class="card-img-top" alt="${book.title}">
+      <div class="card-body">
+        <h5 class="card-title">${book.title}</h5>
+        <p class="card-text">${book.author}</p>
+        <p class="card-text">$${book.price.toFixed(2)}</p>
+        <div class="quantity-container">
+          <label for="quantity-${
             book.title
-          }">Remove</button>
+          }" class="quantity-label">Quantity:</label>
+          <input type="number" id="quantity-${
+            book.title
+          }" class="quantity-input" value="${book.quantity}" min="1">
+          <button class="btn btn-secondary btn-increase quantity-button" data-book-title="${
+            book.title
+          }">+</button>
+          <button class="btn btn-secondary btn-decrease quantity-button" data-book-title="${
+            book.title
+          }">-</button>
         </div>
-      `;
+        <button class="btn btn-danger btn-remove" data-book-title="${
+          book.title
+        }">Remove</button>
+      </div>
+    `;
       cartContainer.appendChild(bookCard);
     });
 

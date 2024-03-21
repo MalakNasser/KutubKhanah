@@ -23,16 +23,13 @@
         </button>
       </div>
 
-      <!-- Display data from localStorage -->
       <div id="adminOverview" class="card-container"></div>
 
-      <!-- Pagination -->
       <nav>
         <ul class="pagination justify-content-center" id="pagination"></ul>
       </nav>
     </div>
 
-    <!-- Add Book Modal -->
     <div
       class="modal fade"
       id="addBookModal"
@@ -60,6 +57,10 @@
               <div class="mb-3">
                 <label for="author" class="form-label">Author</label>
                 <input type="text" class="form-control" id="author" required />
+              </div>
+              <div class="mb-3">
+                <label for="year" class="form-label">Year</label>
+                <input type="number" class="form-control" id="year" required />
               </div>
               <div class="mb-3">
                 <label for="country" class="form-label">Country</label>

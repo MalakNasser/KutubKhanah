@@ -15,15 +15,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+  // Function to save data to local storage
   const saveDataToLocalStorage = (data) => {
     localStorage.setItem("bookData", JSON.stringify(data));
   };
 
+  // Function to load data from local storage
   const loadDataFromLocalStorage = () => {
     const data = localStorage.getItem("bookData");
     return data ? JSON.parse(data) : [];
   };
 
+  // Fetch data when the page loads
   const fetchData = () => {
     const localData = loadDataFromLocalStorage();
     if (localData.length > 0) {
@@ -33,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+  // Function to display data in the admin overview
   const displayData = (data, currentPage = 1) => {
     adminOverview.innerHTML = "";
 
@@ -89,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const newBook = {
       title: document.getElementById("title").value,
       author: document.getElementById("author").value,
+      year: parseInt(document.getElementById("year").value, 10), // Add year field
       country: document.getElementById("country").value,
       imageLink: document.getElementById("imageLink").value, // Store the file object
       language: document.getElementById("language").value,

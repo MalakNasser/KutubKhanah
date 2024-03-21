@@ -1,54 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//   const cartContainer = document.getElementById("cart-container");
-//   const checkoutBtn = document.getElementById("checkoutBtn");
-//   const totalDisplay = document.getElementById("totalDisplay");
-//   const toastContainer = document.getElementById("toastContainer");
-//   let cartItems = [];
-
-//   const addedToCart = JSON.parse(localStorage.getItem("addedToCart"));
-
-//   if (addedToCart && Array.isArray(addedToCart) && addedToCart.length > 0) {
-//     cartItems = addedToCart.map((item) => ({ ...item, quantity: 1 }));
-//     displayBooks(cartItems);
-//     updateTotalDisplay();
-//   }
-
-//   function removeFromCart(event) {
-//     const bookTitle = event.target.getAttribute("data-book-title");
-//     const index = cartItems.findIndex((item) => item.title === bookTitle);
-
-//     if (index !== -1) {
-//       cartItems.splice(index, 1);
-//       updateCartDisplay();
-//       updateTotalDisplay();
-//       showToast("Item removed from the cart", "remove");
-//       localStorage.setItem("addedToCart", JSON.stringify(cartItems));
-//     }
-//   }
-
-//   function increaseQuantity(event) {
-//     const bookTitle = event.target.getAttribute("data-book-title");
-//     const index = cartItems.findIndex((item) => item.title === bookTitle);
-
-//     if (index !== -1) {
-//       cartItems[index].quantity = (cartItems[index].quantity || 1) + 1;
-//       updateCartDisplay();
-//       updateTotalDisplay();
-//       localStorage.setItem("addedToCart", JSON.stringify(cartItems));
-//     }
-//   }
-
-//   function decreaseQuantity(event) {
-//     const bookTitle = event.target.getAttribute("data-book-title");
-//     const index = cartItems.findIndex((item) => item.title === bookTitle);
-
-//     if (index !== -1 && cartItems[index].quantity > 1) {
-//       cartItems[index].quantity -= 1;
-//       updateCartDisplay();
-//       updateTotalDisplay();
-//       localStorage.setItem("addedToCart", JSON.stringify(cartItems));
-//     }
-//   }
 document.addEventListener("DOMContentLoaded", function () {
   const cartContainer = document.getElementById("cart-container");
   const checkoutBtn = document.getElementById("checkoutBtn");
@@ -56,13 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const toastContainer = document.getElementById("toastContainer");
   let cartItems = [];
 
-  fetch("../Assets/books.json")
-    .then((response) => response.json())
-    .then((data) => {
-      cartItems = data.slice(0, 4).map((item) => ({ ...item, quantity: 1 }));
-      displayBooks(cartItems);
-      updateTotalDisplay();
-    });
+  const addedToCart = JSON.parse(localStorage.getItem("addedToCart"));
+
+  if (addedToCart && Array.isArray(addedToCart) && addedToCart.length > 0) {
+    cartItems = addedToCart.map((item) => ({ ...item, quantity: 1 }));
+    displayBooks(cartItems);
+    updateTotalDisplay();
+  }
 
   function removeFromCart(event) {
     const bookTitle = event.target.getAttribute("data-book-title");
@@ -73,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
       updateCartDisplay();
       updateTotalDisplay();
       showToast("Item removed from the cart", "remove");
+      localStorage.setItem("addedToCart", JSON.stringify(cartItems));
     }
   }
 
@@ -84,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
       cartItems[index].quantity = (cartItems[index].quantity || 1) + 1;
       updateCartDisplay();
       updateTotalDisplay();
+      localStorage.setItem("addedToCart", JSON.stringify(cartItems));
     }
   }
 
@@ -95,8 +46,57 @@ document.addEventListener("DOMContentLoaded", function () {
       cartItems[index].quantity -= 1;
       updateCartDisplay();
       updateTotalDisplay();
+      localStorage.setItem("addedToCart", JSON.stringify(cartItems));
     }
   }
+  // document.addEventListener("DOMContentLoaded", function () {
+  //   const cartContainer = document.getElementById("cart-container");
+  //   const checkoutBtn = document.getElementById("checkoutBtn");
+  //   const totalDisplay = document.getElementById("totalDisplay");
+  //   const toastContainer = document.getElementById("toastContainer");
+  //   let cartItems = [];
+
+  //   fetch("../Assets/books.json")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       cartItems = data.slice(0, 4).map((item) => ({ ...item, quantity: 1 }));
+  //       displayBooks(cartItems);
+  //       updateTotalDisplay();
+  //     });
+
+  //   function removeFromCart(event) {
+  //     const bookTitle = event.target.getAttribute("data-book-title");
+  //     const index = cartItems.findIndex((item) => item.title === bookTitle);
+
+  //     if (index !== -1) {
+  //       cartItems.splice(index, 1);
+  //       updateCartDisplay();
+  //       updateTotalDisplay();
+  //       showToast("Item removed from the cart", "remove");
+  //     }
+  //   }
+
+  //   function increaseQuantity(event) {
+  //     const bookTitle = event.target.getAttribute("data-book-title");
+  //     const index = cartItems.findIndex((item) => item.title === bookTitle);
+
+  //     if (index !== -1) {
+  //       cartItems[index].quantity = (cartItems[index].quantity || 1) + 1;
+  //       updateCartDisplay();
+  //       updateTotalDisplay();
+  //     }
+  //   }
+
+  //   function decreaseQuantity(event) {
+  //     const bookTitle = event.target.getAttribute("data-book-title");
+  //     const index = cartItems.findIndex((item) => item.title === bookTitle);
+
+  //     if (index !== -1 && cartItems[index].quantity > 1) {
+  //       cartItems[index].quantity -= 1;
+  //       updateCartDisplay();
+  //       updateTotalDisplay();
+  //     }
+  //   }
 
   function displayBooks(books) {
     books.forEach((book) => {
