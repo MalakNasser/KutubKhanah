@@ -8247,20 +8247,18 @@ body {
         -webkit-transition: none;
         -o-transition: none;
         transition: none; } }
-    .btn:hover, .btn:active, .btn:focus {
-      outline: none !important;
-      -webkit-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important;
-      -moz-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important;
-      box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important; }
-    .btn.btn-primary {
-      background: #bc9864!important;
-      border-color: #bc9864 !important;
+        .btn:hover, .btn:active, .btn:focus {
+          outline: none !important;
+          -webkit-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important;
+          -moz-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important;
+          box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important; }
+        .btn.btn-primary {
+      background: #605F5E !important;
+      border-color: #605F5E !important;
       color: #fcf6e8;
       text-transform: uppercase;
       font-weight: 600; }
-      .btn.btn-primary:hover, .btn.btn-primary:focus {
-        border-color: #a57f48 !important;
-        background: #a57f48 !important; }
+      
   
   .contactForm .label {
     color: #fff;
