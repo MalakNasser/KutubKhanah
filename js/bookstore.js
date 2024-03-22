@@ -32,12 +32,17 @@ const getBooks = () => {
       displayBooks(currentPage);
       createPaginationButtons();
 
-      const addedToWishlist = JSON.parse(localStorage.getItem("addedToWishlist")) || [];
+      const addedToWishlist =
+        JSON.parse(localStorage.getItem("addedToWishlist")) || [];
       books.forEach((book) => {
-        const heartIcons = document.querySelectorAll(`.book img[src="${book.imageLink}"] + .icon-heart i`);
-        const existingItem = addedToWishlist.find((wishlistItem) => wishlistItem.title === book.title);
+        const heartIcons = document.querySelectorAll(
+          `.book img[src="${book.imageLink}"] + .icon-heart i`
+        );
+        const existingItem = addedToWishlist.find(
+          (wishlistItem) => wishlistItem.title === book.title
+        );
         if (existingItem) {
-          heartIcons.forEach(icon => icon.classList.add('active'));
+          heartIcons.forEach((icon) => icon.classList.add("active"));
         }
       });
     })
@@ -139,8 +144,7 @@ function createPaginationButtons() {
     const button = document.createElement("button");
     button.textContent = i;
     button.classList.add("pagination-button");
-    if (i == currentPage)
-    {
+    if (i == currentPage) {
       button.classList.add("selected-page");
     }
     button.addEventListener("click", () => {
@@ -364,7 +368,7 @@ function sortBooks(option) {
       books.sort((a, b) => a.title.localeCompare(b.title));
       break;
     case "titleDesc":
-      books.sort((a, b)=> b.title.localeCompare(a.title));
+      books.sort((a, b) => b.title.localeCompare(a.title));
       break;
     case "priceAsc":
       books.sort((a, b) => a.price - b.price);
@@ -412,15 +416,26 @@ function addToWishlist() {
 }
 
 function checkWishlistItems() {
-  const addedToWishlist = JSON.parse(localStorage.getItem("addedToWishlist")) || [];
+  const addedToWishlist =
+    JSON.parse(localStorage.getItem("addedToWishlist")) || [];
+  if (!addedToWishlist) {
+    const heartIcons = document.querySelectorAll(".icon-heart i");
+    heartIcons.forEach((icon) => icon.classList.remove("active"));
+    return;
+  }
+
   books.forEach((book) => {
-    const heartIcons = document.querySelectorAll(`.book img[src="${book.imageLink}"] + .icon-heart i`);
-    const existingItem = addedToWishlist.find((wishlistItem) => wishlistItem.title === book.title);
-    heartIcons.forEach(icon => {
+    const heartIcons = document.querySelectorAll(
+      `.book img[src="${book.imageLink}"] + .icon-heart i`
+    );
+    const existingItem = addedToWishlist.find(
+      (wishlistItem) => wishlistItem.title === book.title
+    );
+    heartIcons.forEach((icon) => {
       if (existingItem) {
-        icon.classList.add('active');
+        icon.classList.add("active");
       } else {
-        icon.classList.remove('active');
+        icon.classList.remove("active");
       }
     });
   });
