@@ -8,45 +8,73 @@
     <link rel="stylesheet" href="../css/navbar.css" />
   </head>
   <body>
-    <div class="container-fluid">
-      <div
-        class="container row justify-content-between mx-auto h-100 w-100 align-items-center"
-      >
-        <div class="left col-8 row align-items-end h-50 justify-content-start">
-          <a href="../index.html" class="col-2">
-            <img src="../Assets/images/logoIcon.png" class="img-fluid" />
-          </a>
-          <ul class="row col-6 list-unstyled offset-1">
-            <li class="col">
-              <a href="../index.html" class="navbar-link">Home</a>
-            </li>
-            <li class="col">
-              <a href="../pages/bookstore.html" class="navbar-link"
-                >Bookstore</a
+    <div class="navbar navbar-expand-lg pt-0">
+      <div class="container-fluid">
+        <a href="../index.html" class="w-25 navbar-brand d-block d-lg-none">
+          <img src="../Assets/images/logoIcon.png" class="img-fluid" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse container-fluid row justify-content-between mx-auto w-100 align-items-center"
+          id="navbarSupportedContent"
+        >
+          <div
+            class="left col-12 col-lg-8 col-8 row align-items-end h-50 justify-content-start"
+          >
+            <a
+              href="../index.html"
+              class="col-lg-2 navbar-brand d-none d-lg-block"
+            >
+              <img src="../Assets/images/logoIcon.png" class="img-fluid" />
+            </a>
+            <ul class="row col-lg-6 col-12 list-unstyled offset-1">
+              <li class="col-12  col-lg-4">
+                <a href="../index.html" class="navbar-link">Home</a>
+              </li>
+              <li class="col-12 col-lg-4">
+                <a href="../pages/bookstore.html" class="navbar-link"
+                  >Bookstore</a
+                >
+              </li>
+              <li class="col-12 col-lg-4">
+                <a href="../pages/about.html" class="navbar-link">About Us</a>
+              </li>
+            </ul>
+          </div>
+          <div class="right col-12 col-lg-2 row justify-content-center align-items-center pt-5 pb-0 pb-lg-0 pt-lg-0">
+              <button class="btn-dark btn col-12 col-sm-3 col-lg-6">Signup</button>
+              <button
+                class="btn-outline-dark border-dark border-2 btn col-lg-5 col-sm-3 col-12 offset-sm-1 mt-3 mt-sm-0"
               >
-            </li>
-            <li class="col">
-              <a href="../pages/about.html" class="navbar-link">About Us</a>
-            </li>
-          </ul>
-        </div>
-        <div class="right col-2 row">
-          <button class="btn-dark btn col-6">Sign Up</button>
-          <button
-            class="btn-outline-dark border-dark border-2 btn col-5 offset-1"
-          >
-            Login
-          </button>
-          <button
-            class="btn-outline-dark border-dark border-2 btn col-lg-5 col-sm-3 col-12 offset-sm-1 mt-3 mt-sm-0 btn-logout"
-          >
-            Logout
-          </button>
+                Login
+              </button>
+              <button
+                class="btn-outline-dark border-dark border-2 btn col-lg-5 col-sm-3 col-12 offset-sm-1 mt-3 mt-sm-0 btn-logout"
+              >
+                Logout
+              </button>
+          </div>
         </div>
       </div>
     </div>
 
-    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/navbar.js"></script>
+    <script>
+      $('.navbar-toggler').click(function() {
+          parent.postMessage({ toggleState: 'toggled' }, '*');
+      });
+  </script>
   </body>
 </html>

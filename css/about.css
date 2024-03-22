@@ -53,3 +53,21 @@ span {
   margin-right: 120px;
   margin-bottom: 6px;
 }
+@media screen and (min-width: 992px) {
+  #footerFrame {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  #footerFrame {
+    height: 400px;
+  }
+}
+
+.row .row img{
+  border-radius: 60px 0px 60px 0px;
+  position: relative;
+  box-shadow: 6px 6px 1px var(--jet);
+}
+

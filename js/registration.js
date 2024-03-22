@@ -55,7 +55,6 @@ const validateUser = function (newUser) {
   }
   if (isEmailExist == true) {
 
-    // alert("This email already exists");
     showToast("This email is already registered");
   } else {
     createUser(newUser);
@@ -106,8 +105,7 @@ const form = document.querySelector(".formm");
     const referrer = form.querySelector("#inputGroupSelectReferrer").value;
 
     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{8,}$/;
-    // const passwordToast = document.getElementById('passwordToast');
-    // const toastBody= passwordToast.querySelector('.toast-body');
+   
 
     if (
       !firstName ||
@@ -126,18 +124,7 @@ const form = document.querySelector(".formm");
       return;
     }
 
-    // if (isEmailExist == true) {
-    //   showToast("This email is already registered");
-    // }
-    
-
-
   
-  
-
- 
-
-
      user = {
       firstName: firstName,
       lastName: lastName,

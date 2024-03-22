@@ -1,6 +1,6 @@
 .container-fluid {
   background-color: var(--tiffany-blue);
-  height: 250px;
+  min-height: 250px;
   color: var(--jet);
 }
 
