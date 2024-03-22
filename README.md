@@ -28,6 +28,11 @@ KutubKhana Online Bookstore Platform is a web application that aims to recreate 
 
 - **Responsive Design:** The platform is built with a responsive design, ensuring a consistent and enjoyable experience across various devices and screen sizes.
 
+## Production Deployment
+
+You can access the production deployment of KutubKhanah [here](https://malaknasser.github.io/KutubKhanah).
+
+
 ## Screens
 
 Here are some screenshots showcasing the functionalities of the KutubKhana Online Bookstore Platform:
@@ -43,7 +48,7 @@ Here are some screenshots showcasing the functionalities of the KutubKhana Onlin
    ![Book Categories](./Assets/KutubKhanahScreens/bookstore.png)
 
 3. **Wishlist Functionality:**
-   ![Wishlist Functionality](./Assets/KutubKhanahScreens/wishList.png)
+   ![Wishlist Functionality](./Assets/KutubKhanahScreens/wishList.jpg)
 
 4. **Book Details:**
    ![Book Details](./Assets/KutubKhanahScreens/itemView.png)
@@ -52,7 +57,7 @@ Here are some screenshots showcasing the functionalities of the KutubKhana Onlin
    ![Adding to Cart](./Assets/KutubKhanahScreens/cart.png)
 
 6. **Shipping Process:**
-   ![Shipping Process](./Assets/KutubKhanahScreens/shipping.png)
+   ![Shipping Process](./Assets/KutubKhanahScreens/shipping.jpg)
 
 7. **Cart Success Process:**
    ![Cart Success Process](./Assets/KutubKhanahScreens/cartSuccess.png)
@@ -84,7 +89,23 @@ To get started with the KutubKhana Online Bookstore Platform, follow these steps
    cd KutubKhanah
    ```
 
-3. **Open `index.html` in your Browser:**
+3. **Install JSON Server:**
+
+Before running the JSON Server, you need to install it globally on your machine. If you haven't already installed JSON Server, you can do so using npm (Node Package Manager) by running the following command:
+
+   ```bash
+   npm install -g json-server
+   ```
+
+4. **Start JSON Server:**
+
+Once JSON Server is installed, navigate to the project directory if you're not already there and run the following command to start the server:
+
+   ```bash
+   json-server --watch database/userData.json
+   ```
+
+5. **Open `index.html` in your Browser:**
    Open the `index.html` file in your preferred web browser to explore the online bookstore platform.
 
 ## How to Use
@@ -104,12 +125,3 @@ To get started with the KutubKhana Online Bookstore Platform, follow these steps
 5. **Checkout:**
    Complete your purchase by following the simple checkout process.
 
-## Contributing
-
-We welcome contributions from the community to enhance the KutubKhana Online Bookstore Platform. If you'd like to contribute, please follow our [contribution guidelines](CONTRIBUTING.md).
-
-## License
-
-This project is licensed under the [MIT License](LICENSE), which means you are free to use, modify, and distribute the code for personal or commercial purposes.
-
-Thank you for exploring KutubKhana Online Bookstore Platform! Happy reading! 📚✨
