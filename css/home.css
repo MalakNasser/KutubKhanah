@@ -200,16 +200,21 @@ span {
   z-index: -1;
 }
 
-.sign{
+.sign {
   background-color: var(--old-lace-trans);
-  width: 80%;
   height: 300px;
-  padding: 60px;
   border-radius: 20px;
   border: 2px solid var(--jet-trans-75);
 }
 
-.sign h2{
+@media screen and (min-width: 992px) {
+  .sign {
+      width: 80%;
+      padding: 60px;
+  }
+}
+
+.sign h2 {
   font-weight: 600;
 }
 
@@ -227,4 +232,15 @@ span {
 
 .sign .btn:hover {
   filter: brightness(105%);
+}
+@media screen and (min-width: 992px) {
+  #footerFrame {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  #footerFrame {
+    height: 400px;
+  }
 }
