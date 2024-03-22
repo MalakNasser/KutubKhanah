@@ -47,7 +47,8 @@ function addToCart() {
 }
 
 function checkWishlist() {
-  let addedToWishlist = JSON.parse(localStorage.getItem("addedToWishlist")) || [];
+  let addedToWishlist =
+    JSON.parse(localStorage.getItem("addedToWishlist")) || [];
   const existingItemIndex = addedToWishlist.findIndex(
     (wishlistItem) => wishlistItem.title === bookDetails.title
   );
@@ -62,7 +63,8 @@ function checkWishlist() {
 }
 
 function addToWishlist() {
-  let addedToWishlist = JSON.parse(localStorage.getItem("addedToWishlist")) || [];
+  let addedToWishlist =
+    JSON.parse(localStorage.getItem("addedToWishlist")) || [];
   const existingItemIndex = addedToWishlist.findIndex(
     (wishlistItem) => wishlistItem.title === bookDetails.title
   );
@@ -77,6 +79,9 @@ function addToWishlist() {
   console.log(localStorage.getItem("addedToWishlist"));
 
   checkWishlist();
+  setTimeout(function () {
+    window.location.href = "../pages/wishlist.html";
+  }, 2000);
 }
 
-window.addEventListener('DOMContentLoaded', checkWishlist);
+window.addEventListener("DOMContentLoaded", checkWishlist);

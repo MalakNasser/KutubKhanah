@@ -38,7 +38,7 @@
               <img src="../Assets/images/logoIcon.png" class="img-fluid" />
             </a>
             <ul class="row col-lg-6 col-12 list-unstyled offset-1">
-              <li class="col-12  col-lg-4">
+              <li class="col-12 col-lg-4">
                 <a href="../index.html" class="navbar-link">Home</a>
               </li>
               <li class="col-12 col-lg-4">
@@ -51,18 +51,22 @@
               </li>
             </ul>
           </div>
-          <div class="right col-12 col-lg-2 row justify-content-center align-items-center pt-5 pb-0 pb-lg-0 pt-lg-0">
-              <button class="btn-dark btn col-12 col-sm-3 col-lg-6">Signup</button>
-              <button
-                class="btn-outline-dark border-dark border-2 btn col-lg-5 col-sm-3 col-12 offset-sm-1 mt-3 mt-sm-0"
-              >
-                Login
-              </button>
-              <button
-                class="btn-outline-dark border-dark border-2 btn col-lg-5 col-sm-3 col-12 offset-sm-1 mt-3 mt-sm-0 btn-logout"
-              >
-                Logout
-              </button>
+          <div
+            class="right col-12 col-lg-2 row justify-content-center align-items-center pt-5 pb-0 pb-lg-0 pt-lg-0"
+          >
+            <button class="btn-dark btn col-12 col-sm-3 col-lg-6">
+              Signup
+            </button>
+            <button
+              class="btn-outline-dark border-dark border-2 btn col-lg-5 col-sm-3 col-12 offset-sm-1 mt-3 mt-sm-0"
+            >
+              Login
+            </button>
+            <button
+              class="btn-outline-dark border-dark border-2 btn col-lg-5 col-sm-3 col-12 offset-sm-1 mt-3 mt-sm-0 btn-logout"
+            >
+              Logout
+            </button>
           </div>
         </div>
       </div>
@@ -72,9 +76,9 @@
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/navbar.js"></script>
     <script>
-      $('.navbar-toggler').click(function() {
-          parent.postMessage({ toggleState: 'toggled' }, '*');
+      $(".navbar-toggler").click(function () {
+        parent.postMessage({ toggleState: "toggled" }, "*");
       });
-  </script>
+    </script>
   </body>
 </html>
