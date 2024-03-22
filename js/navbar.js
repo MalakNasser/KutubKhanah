@@ -1,53 +1,43 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var isLoggedIn = localStorage.getItem('loggedIn') === 'true';
-  var logoutBtn = document.querySelector(".btn-logout");
+  var parentLocation = window.location.href;
+
+  var navbarLinks = document.querySelectorAll(".navbar-link");
+  var indexLink = document.querySelector('.navbar-link[href="../index.html"]');
   var signUpBtn = document.querySelector(".btn-dark");
   var signInBtn = document.querySelector(".btn-outline-dark");
 
-  const hideButtons = () => {
-    if (signUpBtn) signUpBtn.style.display = "none";
-    if (signInBtn) signInBtn.style.display = "none";
-    if (logoutBtn) logoutBtn.style.display = "block";
-  };
+  signUpBtn.addEventListener("click", () => {
+    try {
+      window.parent.location.href = "../pages/registration.html";
+    } catch (e) {
+      window.location.href = "../pages/registration.html";
+    }
+  });
 
-  const showButtons = () => {
-    if (signUpBtn) signUpBtn.style.display = "block";
-    if (signInBtn) signInBtn.style.display = "block";
-    if (logoutBtn) logoutBtn.style.display = "none";
-  };
-
-  if (isLoggedIn) {
-    hideButtons();
-  } else {
-    showButtons();
-    window.parent.location.href = "../pages/login.html";
-  }
-
-  if (logoutBtn) {
-    logoutBtn.addEventListener("click", () => {
-      localStorage.removeItem('loggedIn');
+  signInBtn.addEventListener("click", () => {
+    try {
       window.parent.location.href = "../pages/login.html";
-    });
-  }
+    } catch (e) {
+      window.location.href = "../pages/login.html";
+    }
+  });
 
-  if (signUpBtn) {
-    signUpBtn.addEventListener("click", () => {
+  navbarLinks.forEach(function (link) {
+    var linkPath = link.getAttribute("href");
+    if (parentLocation.endsWith(linkPath)) {
+      link.classList.add("active");
+    }
+  });
+
+  navbarLinks.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      var targetUrl = link.getAttribute("href");
       try {
-        window.parent.location.href = "../pages/registration.html";
+        window.parent.location.href = targetUrl;
       } catch (e) {
-        window.location.href = "../pages/registration.html";
+        window.location.href = targetUrl;
       }
     });
-  }
-
-  if (signInBtn) {
-    signInBtn.addEventListener("click", () => {
-      try {
-        window.parent.location.href = "../pages/login.html";
-      } catch (e) {
-        window.location.href = "../pages/login.html";
-      }
-    });
-  }
-
+  });
 });
