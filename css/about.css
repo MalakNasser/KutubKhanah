@@ -65,9 +65,9 @@ span {
   }
 }
 
-.row .row img{
+.row .row img {
   border-radius: 60px 0px 60px 0px;
   position: relative;
   box-shadow: 6px 6px 1px var(--jet);
+  object-fit: cover;
 }
-
