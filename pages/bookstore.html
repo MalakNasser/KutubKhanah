@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="../Assets/images/logoIcon.png" type="image/png">
+    <link rel="icon" href="../Assets/images/logoIcon.png" type="image/png" />
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/bookstore.css" />
@@ -14,12 +14,12 @@
       type="text/css"
     />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Bookstore</title>
   </head>
   <body class="position-relative">
@@ -33,7 +33,20 @@
       style="height: 110px"
     ></iframe>
     <div class="container mb-4 container-frame">
-      <div class="sorting w-100 d-flex justify-content-end">
+      <div
+        class="sorting w-100 d-flex justify-content-between justify-content-lg-end align-items-baseline"
+      >
+        <button
+          class="btn btn-outline-dark d-block d-lg-none mt-3"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Categories
+        </button>
         <div class="dropdown mt-3">
           <button
             class="btn btn-secondary dropdown-toggle"
@@ -64,11 +77,14 @@
           </ul>
         </div>
       </div>
-      <div class="row mt-5">
-        <div class="col-3 row">
-          <div class="categories col-10">
+      <div class="row mt-5 justify-content-center">
+        <div class="col-xl-3 col-lg-4 col-md-7 col-sm-9 col-10 row">
+          <div
+            class="collapse categories col-lg-10 col-12 mb-5 mb-lg-0"
+            id="navbarSupportedContent"
+          >
             <div class="search row">
-              <div class="col-9" style="position: relative;">
+              <div class="col-8 col-lg-9" style="position: relative">
                 <input
                   type="search"
                   name="search"
@@ -76,13 +92,15 @@
                   class="form-control srch"
                   placeholder="Search here"
                 />
-                <i class="fa-solid fa-circle-xmark fa-lg close-search-button"></i>
+                <i
+                  class="fa-solid fa-circle-xmark fa-lg close-search-button"
+                ></i>
               </div>
               <button class="btn btn-yellow col-2">
                 <img
                   src="../Assets/images/search.png"
                   class="img-fluid"
-                  width="110px"
+                  width="70%"
                   alt=""
                 />
               </button>
@@ -175,13 +193,17 @@
             </div>
           </div>
         </div>
-        <div class="col-9 justify-content-center row align-items-start">
-          <div class="books row justify-content-start"></div>
+        <div
+          class="col-12 col-md-12 col-lg-8 col-xl-9 justify-content-center row align-items-start"
+        >
+          <div
+            class="books row justify-content-lg-start justify-content-sm-evenly justify-content-center"
+          ></div>
           <div class="pagination w-auto"></div>
         </div>
       </div>
     </div>
-   <iframe
+    <iframe
       src="../components/footer.html"
       frameborder="0"
       width="100%"
@@ -193,5 +215,18 @@
     <script src="../js/bookstore.js"></script>
     <script src="../js/menu.js"></script>
     <script src="../js/navbar-toggler.js"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        var collapse = new bootstrap.Collapse(
+          document.getElementById("navbarSupportedContent"),
+          {
+            toggle: false,
+          }
+        );
+        if (window.innerWidth >= 992) {
+          collapse.show();
+        }
+      });
+    </script>
   </body>
 </html>

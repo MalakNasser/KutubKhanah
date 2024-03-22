@@ -1,5 +1,5 @@
 body {
-  background-color: var(--old-lace);
+  background-color: var(--old-lace) !important;
 }
 
 .container {
@@ -106,11 +106,13 @@ body {
 }
 
 .adminPagination {
-  margin-left: 360px;
+  /* margin-left: 360px; */
   margin-top: 20px;
+  margin-bottom: 20px;
   display: flex;
   list-style: none;
   gap: 10px;
+  width: fit-content;
 }
 
 .adminPagination li {

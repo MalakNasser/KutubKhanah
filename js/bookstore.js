@@ -61,9 +61,14 @@ function displayBooks(page) {
     const bookElement = document.createElement("div");
     bookElement.classList.add(
       "book",
-      "col-2",
+      "col-xl-2",
+      "col-lg-3",
+      "col-sm-5",
+      "ms-sm-2",
+      "col-md-3",
+      "col-9",
       "mb-4",
-      "me-4",
+      "me-lg-4",
       "d-flex",
       "flex-column",
       "justify-content-between",
