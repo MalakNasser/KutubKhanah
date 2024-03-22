@@ -200,9 +200,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const nameRegex = /^[A-Za-z\s]+$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const addressRegex = /^[A-Za-z0-9\s]+$/;
-  const cityRegex = /^[A-Za-z\s]+$/;
-  const zipRegex = /^\d{5}$/;
+  // const addressRegex = /^[A-Za-z0-9\s]+$/;
+  // const cityRegex = /^[A-Za-z\s]+$/;
+  // const zipRegex = /^\d{5}$/;
   const cardNumberRegex = /^\d{16}$/;
   const expiryDateRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
   const cvvRegex = /^\d{3}$/;
@@ -221,29 +221,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     document.getElementById("personalForm").style.display = "none";
-    document.getElementById("addressForm").style.display = "block";
-    showToast("Proceeding to address information", "checkout");
-  });
-
-  document.getElementById("nextToPayment").addEventListener("click", () => {
-    const address = document.getElementById("address").value;
-    const city = document.getElementById("city").value;
-    const zip = document.getElementById("zip").value;
-
-    if (
-      !validateInput(address, addressRegex) ||
-      !validateInput(city, cityRegex) ||
-      !validateInput(zip, zipRegex)
-    ) {
-      showToast("Please enter valid Address, City, and ZIP Code.", "remove");
-
-      return;
-    }
-
-    document.getElementById("addressForm").style.display = "none";
     document.getElementById("paymentForm").style.display = "block";
     showToast("Proceeding to payment information", "checkout");
   });
+
+  // document.getElementById("nextToPayment").addEventListener("click", () => {
+  //   const address = document.getElementById("address").value;
+  //   const city = document.getElementById("city").value;
+  //   const zip = document.getElementById("zip").value;
+
+  //   if (
+  //     !validateInput(address, addressRegex) ||
+  //     !validateInput(city, cityRegex) ||
+  //     !validateInput(zip, zipRegex)
+  //   ) {
+  //     showToast("Please enter valid Address, City, and ZIP Code.", "remove");
+
+  //     return;
+  //   }
+
+  //   document.getElementById("addressForm").style.display = "none";
+  //   document.getElementById("paymentForm").style.display = "block";
+  //   showToast("Proceeding to payment information", "checkout");
+  // });
 
   document.getElementById("submitOrder").addEventListener("click", () => {
     const cardNumber = document.getElementById("cardNumber").value;
@@ -263,13 +263,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
-    const address = document.getElementById("address").value;
-    const city = document.getElementById("city").value;
-    const zip = document.getElementById("zip").value;
+    // const address = document.getElementById("address").value;
+    // const city = document.getElementById("city").value;
+    // const zip = document.getElementById("zip").value;
 
     const orderData = {
       personalInfo: { name, email },
-      shippingAddress: { address, city, zip },
+      // shippingAddress: { address, city, zip },
       paymentInfo: { cardNumber, expiryDate, cvv },
       cartItems: cartItems,
     };

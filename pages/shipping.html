@@ -25,7 +25,6 @@
       .container {
         background-color: var(--old-lace);
         height: 100vh;
-        padding: 50px;
       }
 
       h3 {
@@ -34,7 +33,6 @@
 
       .whole {
         height: 100vh;
-        padding-top: 85px;
       }
 
       .first-half {
@@ -61,7 +59,19 @@
         color: #3d3b49;
         font-size: 2.5rem !important;
       }
-
+      .ShippingBtnSave {
+        background-color: var(--cerulean);
+        border: 1.4px solid var(--jet-trans-95);
+        color: var(--old-lace);
+        font-size: 16px;
+        height: 30px;
+        width: 250px;
+        box-shadow: 2px 2px 1px var(--jet);
+        margin-top: 20px;
+        border-radius: 5px;
+        padding: 2px 10px 2px 10px;
+        transition: background-color 0.3s ease;
+      }
       .btn-primary {
         background-color: #212529 !important;
         border: none !important;
@@ -97,7 +107,7 @@
     </style>
   </head>
   <body>
-    <iframe
+    <!-- <iframe
       id="navbarFrame"
       src="../components/navbar.html?page=../pages/shipping.html"
       frameborder="0"
@@ -105,13 +115,10 @@
       scrolling="no"
       class="fixed-top"
       style="height: 110px"
-    ></iframe>
+    ></iframe> -->
     <br />
     <br />
     <div class="container mt-5">
-      <!-- Add mt-5 class here to move the content downwards -->
-      <h1>Shipping Information</h1>
-
       <div class="row">
         <div class="col-md-6 col-lg-6">
           <h2>Shipping Address</h2>
@@ -132,7 +139,9 @@
               <label for="zipcode" class="form-label">Zip Code:</label>
               <input type="text" class="form-control" id="zipcode" required />
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="ShippingBtnSave" id="ShippingBtn">
+              Save
+            </button>
           </form>
         </div>
 
@@ -185,14 +194,14 @@
         </div>
       </div>
     </div>
-    <iframe
+    <!-- <iframe
       src="../components/footer.html"
       frameborder="0"
       width="100%"
       scrolling="no"
       class="position-absolute"
       id="footerFrame"
-    ></iframe>
+    ></iframe> -->
     <script src="../js/shipping.js"></script>
     <script src="../js/bootstrap.bundle.js"></script>
     <script src="../js/navbar-toggler.js"></script>
