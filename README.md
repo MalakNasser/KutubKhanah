@@ -6,6 +6,7 @@ Welcome to the GitHub repository for KutubKhana's Online Bookstore Platform. Thi
 
 - [Introduction](#introduction)
 - [Features](#features)
+- [Screens](#screens)
 - [Getting Started](#getting-started)
 - [How to Use](#how-to-use)
 - [Contributing](#contributing)
@@ -27,16 +28,58 @@ KutubKhana Online Bookstore Platform is a web application that aims to recreate 
 
 - **Responsive Design:** The platform is built with a responsive design, ensuring a consistent and enjoyable experience across various devices and screen sizes.
 
+## Screens
+
+Here are some screenshots showcasing the functionalities of the KutubKhana Online Bookstore Platform:
+
+0. **Register and Login**
+   ![Register Page](./Assets/KutubKhanahScreens/register.png)
+   ![Login Page](./Assets/KutubKhanahScreens/login.png)
+
+1. **Homepage:**
+   ![Homepage](./Assets/KutubKhanahScreens/index.png)
+
+2. **Book Categories:**
+   ![Book Categories](./Assets/KutubKhanahScreens/bookstore.png)
+
+3. **Wishlist Functionality:**
+   ![Wishlist Functionality](./Assets/KutubKhanahScreens/wishList.png)
+
+4. **Book Details:**
+   ![Book Details](./Assets/KutubKhanahScreens/itemView.png)
+
+5. **Adding to Cart:**
+   ![Adding to Cart](./Assets/KutubKhanahScreens/cart.png)
+
+6. **Shipping Process:**
+   ![Shipping Process](./Assets/KutubKhanahScreens/shipping.png)
+
+7. **Cart Success Process:**
+   ![Cart Success Process](./Assets/KutubKhanahScreens/cartSuccess.png)
+
+8. **About Us Process:**
+   ![About Us Process](./Assets/KutubKhanahScreens/aboutUs.png)
+
+9. **Contact Us Process:**
+   ![Contact Us Process](./Assets/KutubKhanahScreens/contactUs.png)
+
+10. **Admin Dashboard Process:**
+    ![Admin Dashboard Process](./Assets/KutubKhanahScreens/adminDashboard.png)
+
+Feel free to explore the platform through these screenshots!
+
 ## Getting Started
 
 To get started with the KutubKhana Online Bookstore Platform, follow these steps:
 
 1. **Clone the Repository:**
+
    ```bash
    git clone https://github.com/your-username/kutubkhana-online-platform.git
    ```
 
 2. **Open the Project:**
+
    ```bash
    cd kutubkhana-online-platform
    ```
