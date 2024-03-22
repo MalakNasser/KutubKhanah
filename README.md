@@ -38,8 +38,8 @@ You can access the production deployment of KutubKhanah [here](https://malaknass
 Here are some screenshots showcasing the functionalities of the KutubKhana Online Bookstore Platform:
 
 0. **Register and Login**
-   ![Register Page](./Assets/KutubKhanahScreens/register.png)
-   ![Login Page](./Assets/KutubKhanahScreens/login.png)
+   ![Register Page](./Assets/KutubKhanahScreens/register2.png)
+   ![Login Page](./Assets/KutubKhanahScreens/login2.png)
 
 1. **Homepage:**
    ![Homepage](./Assets/KutubKhanahScreens/index.png)
