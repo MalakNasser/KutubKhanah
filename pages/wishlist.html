@@ -1,51 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wishlist Page</title>
-  <!-- Bootstrap CSS -->
-  <link href="../css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom CSS -->
-  <style>
-    /* Custom styles go here */
-    .product-img {
-      max-width: 100px;
-      height: auto;
-    }
-    .card-img {
-      max-width: 100px; /* Set max-width for the image */
-      height: auto; /* Maintain aspect ratio */
-    }
-  </style>
-</head>
-<body>
-  <iframe
-  src="../components/navbar.html?page=../index.html"
-  frameborder="0"
-  width="100%"
-  height="100px"
-  scrolling="no"
-  class="fixed-top"
-></iframe>
-<br>
-<br>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wishlist Page</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      body {
+        background-color: #fdf5e6;
+      }
 
-  <div class="container mt-5">
-    <h1>My Wishlist</h1>
+      .card {
+        width: 200px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        border-radius: 25px 0px 25px 0px;
+        min-height: 60vh;
+        padding: 10px;
+      }
 
-    <div id="wishlistContainer" class="row">
-      <!-- Wishlist items will be displayed here -->
+      .card img {
+        width: 80%;
+        height: 200px;
+        object-fit: cover;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .btn-danger {
+        font-size: 0.8rem;
+        width: 50%;
+      }
+
+      .container {
+        display: block;
+        justify-content: center;
+        margin-bottom: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe
+      src="../components/navbar.html?page=../index.html"
+      frameborder="0"
+      width="100%"
+      height="100px"
+      scrolling="no"
+      class="fixed-top"
+    ></iframe>
+    <br />
+    <br />
+    <div class="container mt-5 offset-1">
+      <div class="row">
+        <div class="col-12 mt-3">
+          <h1>My Wishlist</h1>
+        </div>
+      </div>
+      <div class="row m-1" id="wishlistContainer"></div>
     </div>
-  </div>
-  <iframe
-  src="../components/footer.html"
-  frameborder="0"
-  width="100%"
-  height="250px"
-  scrolling="no"
-  class="position-absolute mt-5"
-></iframe>
-  <script src="../js/wishlist.js"></script>
-</body>
+    <iframe
+      src="../components/footer.html"
+      frameborder="0"
+      width="100%"
+      height="250px"
+      scrolling="no"
+      class="position-absolute mt-5"
+    ></iframe>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/wishlist.js"></script>
+  </body>
 </html>
