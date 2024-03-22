@@ -117,13 +117,71 @@ span {
 .book .img {
   position: absolute;
   width: 75%;
+  max-width: 200px;
   top: -33%;
-  left: 32px;
+  left: 12%;
   border-radius: 30px 0px 30px 0px;
 }
 .lg-book .img {
   width: 80%;
 }
+/* 
+@media only screen and (max-width: 600px) {
+ 
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .book .img {
+    position: absolute;
+    width: 75%;
+    top: -33%;
+    left: 32px;
+    border-radius: 30px 0px 30px 0px;
+  }
+  .lg-book .img {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .book .img {
+    position: absolute;
+    width: 75%;
+    top: -33%;
+    left: 32px;
+    border-radius: 30px 0px 30px 0px;
+  }
+  .lg-book .img {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  .book .img {
+    position: absolute;
+    width: 75%;
+    top: -33%;
+    left: 32px;
+    border-radius: 30px 0px 30px 0px;
+  }
+  .lg-book .img {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 1201px) {
+  .book .img {
+    position: absolute;
+    width: 75%;
+    top: -33%;
+    left: 32px;
+    border-radius: 30px 0px 30px 0px;
+  }
+  .lg-book .img {
+    width: 80%;
+  }
+} */
+
 .book .img img {
   border-radius: 30px 0px 30px 0px;
   position: relative;
@@ -209,8 +267,8 @@ span {
 
 @media screen and (min-width: 992px) {
   .sign {
-      width: 80%;
-      padding: 60px;
+    width: 80%;
+    padding: 60px;
   }
 }
 
