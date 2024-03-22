@@ -30,24 +30,20 @@ body{
 }
 
 .free{
-    /* padding-left: 100px; */
     font-size: 35px;
     color: #3b3d49;
 }
 .credit-Card{
     font-size: 20px;
-    /* padding-left: 100px; */
     color: #3b3d49;
 }
 .free-trial{
     font-size: 29px;
-    /* padding-left: 100px; */
     padding-top: 20px;
     color: #3b3d49;
 }
 .formm{
     padding-top: 20px;
-    /* padding-left: 100px; */
 }
 .form-group{
     max-width: 590px !important; 
@@ -146,11 +142,10 @@ li{
     }
   }
   .toast-container {
-    position: fixed;
-    top: 20px; /* Adjust as needed */
-    right: 20px; /* Adjust as needed */
-    z-index: 1000;
-    width: 100%; /* Take full width of the viewport */
+    position: absolute;
+    top: 20px; 
+    right: 20px;
+    z-index: 1000000000 !important ; 
     display: flex;
     justify-content: center;
 }
