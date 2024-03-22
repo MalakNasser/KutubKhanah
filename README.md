@@ -69,7 +69,7 @@ Here are some screenshots showcasing the functionalities of the KutubKhana Onlin
    ![Contact Us Process](./Assets/KutubKhanahScreens/contactUs.png)
 
 10. **Admin Dashboard Process:**
-    ![Admin Dashboard Process](./Assets/KutubKhanahScreens/adminDashboard.png)
+    ![Admin Dashboard Process](./Assets/KutubKhanahScreens/admin.png)
 
 Feel free to explore the platform through these screenshots!
 
