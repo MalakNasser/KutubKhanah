@@ -20,12 +20,13 @@
   </head>
   <body>
     <iframe
+      id="navbarFrame"
       src="../components/navbar.html?page=../pages/about.html"
       frameborder="0"
       width="100%"
-      height="100px"
       scrolling="no"
       class="fixed-top"
+      style="height: 110px"
     ></iframe>
     <div class="container container-frame">
       <div class="row justify-content-center align-items-center">
@@ -66,16 +67,58 @@
           </div>
         </div>
       </div>
+      <div class="images container mx-auto text-center mt-5 mb-5">
+        <h1>whatever title</h1>
+        <div class="row justify-content-center mt-5">
+          <div class="col-4 row justify-content-center">
+            <img
+              src="../Assets/images/a-la-recherche-du-temps-perdu.jpg"
+              class="img-fluid col-7 p-0"
+              alt=""
+            />
+          </div>
+          <div class="col-4 row justify-content-center">
+            <img
+              src="../Assets/images/a-la-recherche-du-temps-perdu.jpg"
+              class="img-fluid col-7 p-0"
+              alt=""
+            />
+          </div>
+          <div class="col-4 row justify-content-center">
+            <img
+              src="../Assets/images/a-la-recherche-du-temps-perdu.jpg"
+              class="img-fluid col-7 p-0"
+              alt=""
+            />
+          </div>
+          <div class="col-4 row mt-5 justify-content-center">
+            <img
+              src="../Assets/images/a-la-recherche-du-temps-perdu.jpg"
+              class="img-fluid col-7 p-0"
+              alt=""
+            />
+          </div>
+          <div class="col-4 row mt-5 justify-content-center">
+            <img
+              src="../Assets/images/a-la-recherche-du-temps-perdu.jpg"
+              class="img-fluid col-7 p-0"
+              alt=""
+            />
+          </div>
+          
+        </div>
+      </div>
     </div>
 
     <iframe
       src="../components/footer.html"
       frameborder="0"
       width="100%"
-      height="250px"
       scrolling="no"
-      class="position-absolute mt-5"
+      class="position-absolute"
+      id="footerFrame"
     ></iframe>
+    <script src="../js/navbar-toggler.js"></script>
     <script src="../js/bootstrap.bundle.js"></script>
   </body>
 </html>

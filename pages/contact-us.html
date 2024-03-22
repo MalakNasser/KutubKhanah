@@ -16,12 +16,13 @@
   <body>
     <!-- NavBar -->
     <iframe
-      src="../components/navbar.html?page=../pages/index.html"
+      id="navbarFrame"
+      src="../components/navbar.html?page=../pages/contact-us.html"
       frameborder="0"
       width="100%"
-      height="100px"
       scrolling="no"
       class="fixed-top"
+      style="height: 110px"
     ></iframe>
 
     <!-- Flexbox container for aligning the toasts -->
@@ -211,14 +212,14 @@
     </section>
 
     <!-- Footer -->
-    <iframe
+   <iframe
       src="../components/footer.html"
       frameborder="0"
       width="100%"
-      height="250px"
       scrolling="no"
-      class="position-absolute mt-5"
+      class="position-absolute"
+      id="footerFrame"
     ></iframe>
-
+    <script src="../js/navbar-toggler.js"></script>
  </body>
 </html>

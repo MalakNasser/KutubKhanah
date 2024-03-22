@@ -178,3 +178,15 @@ body {
   background-color: var(--old-lace);
   color: var(--old-lace);
 }
+
+@media screen and (min-width: 992px) {
+  #footerFrame {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  #footerFrame {
+    height: 400px;
+  }
+}

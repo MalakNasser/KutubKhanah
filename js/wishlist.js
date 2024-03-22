@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Retrieve wishlist items from local storage
-  let wishlistItems = JSON.parse(localStorage.getItem('wishlist')) || [];
+  let wishlistItems = JSON.parse(localStorage.getItem('addedToWishlist')) || [];
 
   // Get the wishlist container
   let wishlistContainer = document.getElementById('wishlistContainer');
@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function displayWishlistItems(items, container) {
+  console.log(items);
   // Clear the existing content of the wishlist container
   container.innerHTML = '';
 

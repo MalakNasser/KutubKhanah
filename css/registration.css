@@ -178,3 +178,15 @@ li{
     --main-primary-color : #d3002d; 
     --grey-color : #ced4da;
 }
+@media screen and (min-width: 992px) {
+    #footerFrame {
+      height: 250px;
+    }
+  }
+  
+  @media screen and (max-width: 991px) {
+    #footerFrame {
+      height: 400px;
+    }
+  }
+  

@@ -16,13 +16,14 @@
   </head>
   <body>
     <iframe
-      src="../components/navbar.html?page=../index.html"
-      frameborder="0"
-      width="100%"
-      height="100px"
-      scrolling="no"
-      class="fixed-top"
-    ></iframe>
+    id="navbarFrame"
+    src="../components/navbar.html?page=../pages/adminDashboard.html"
+    frameborder="0"
+    width="100%"
+    scrolling="no"
+    class="fixed-top"
+    style="height: 110px"
+  ></iframe>
     <div class="container mt-5">
       <div class="dashboard-header">
         <h1>Admin Dashboard</h1>
@@ -129,13 +130,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="../js/adminDashboard.js"></script>
-    <iframe
+    <script src="../js/navbar-toggler.js"></script>
+   <iframe
       src="../components/footer.html"
       frameborder="0"
       width="100%"
-      height="250px"
       scrolling="no"
-      class="position-absolute mt-5"
+      class="position-absolute"
+      id="footerFrame"
     ></iframe>
   </body>
 </html>

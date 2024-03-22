@@ -297,3 +297,14 @@ input[type="email"] {
 #paymentForm h3 {
   margin-bottom: 10px;
 }
+@media screen and (min-width: 992px) {
+  #footerFrame {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  #footerFrame {
+    height: 400px;
+  }
+}
