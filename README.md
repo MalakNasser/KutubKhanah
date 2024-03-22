@@ -75,13 +75,13 @@ To get started with the KutubKhana Online Bookstore Platform, follow these steps
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your-username/kutubkhana-online-platform.git
+   git clone https://github.com/MalakNasser/KutubKhanah
    ```
 
 2. **Open the Project:**
 
    ```bash
-   cd kutubkhana-online-platform
+   cd KutubKhanah
    ```
 
 3. **Open `index.html` in your Browser:**
