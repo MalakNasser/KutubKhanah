@@ -67,9 +67,7 @@
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/navbar.js"></script>
     <script>
-      // Handle click event on navbar toggler button
       $('.navbar-toggler').click(function() {
-          // Send toggle state to parent window
           parent.postMessage({ toggleState: 'toggled' }, '*');
       });
   </script>
