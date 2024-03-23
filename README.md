@@ -6,7 +6,7 @@ Welcome to the GitHub repository for KutubKhana's Online Bookstore Platform. Thi
 
 - [Introduction](#introduction)
 - [Features](#features)
-- [Screens](#screens)
+- [Screens and Demo](#screens)
 - [Getting Started](#getting-started)
 - [How to Use](#how-to-use)
 - [Contributing](#contributing)
@@ -65,6 +65,10 @@ Here are some screenshots showcasing the functionalities of the KutubKhana Onlin
 
 10. **Admin Dashboard Process:**
     ![Admin Dashboard Process](./Assets/KutubKhanahScreens/adminDashboard.png)
+    
+12. **Demo Video:**\
+    ![demoKutubKhana](https://github.com/MalakNasser/KutubKhanah/assets/54104161/a6057f9c-041e-422d-bc4b-6960a39378bc)
+
 
 Feel free to explore the platform through these screenshots!
 
